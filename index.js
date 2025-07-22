@@ -1,0 +1,3 @@
+class name {
+  constructor(parameters) {}
+}

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Smart Kitchen Assistant</title>
+    <style>
+      .container {
+        display: flex;
+        height: 100vh;
+      }
+      .tabs {
+        display: flex;
+        flex-direction: column;
+        min-width: 160px;
+        border-right: 1px solid #ccc;
+        background: #f7f7f7;
+        padding-top: 2em;
+      }
+      .tab-btn {
+        padding: 1em;
+        border: none;
+        border-bottom: 1px solid #ccc;
+        background: none;
+        cursor: pointer;
+        text-align: left;
+        font-size: 1em;
+        outline: none;
+        transition: background 0.2s;
+      }
+      .tab-btn.active {
+        background: #fff;
+        font-weight: bold;
+        border-right: 3px solid #0078d7;
+      }
+      .tab-content {
+        flex: 1;
+        padding: 2em;
+        background: #fff;
+        overflow-y: auto;
+      }
+      .hidden {
+        display: none;
+      }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+      }
+      th,
+      td {
+        border: 1px solid #ccc;
+        padding: 0.5em;
+        cursor: pointer;
+      }
+      input[type="text"] {
+        width: 90%;
+      }
+      .opened {
+        background: #e0ffe0;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="tabs">
+        <button class="tab-btn active" data-tab="grocery">Grocery Trip</button>
+        <button class="tab-btn" data-tab="inventory">Inventory</button>
+      </div>
+      <div style="flex: 1; display: flex; flex-direction: column">
+        <div id="grocery" class="tab-content">
+          <h2>Grocery Trip</h2>
+          <form id="grocery-form">
+            <input
+              type="text"
+              id="item-name"
+              placeholder="Item name"
+              required
+            />
+            <button type="submit">Add Item</button>
+          </form>
+          <div id="grocery-msg"></div>
+        </div>
+        <div id="inventory" class="tab-content hidden">
+          <h2>Inventory</h2>
+          <table id="inventory-table">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Expires</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- Items will appear here -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <script src="main.js"></script>
+  </body>
+</html>
