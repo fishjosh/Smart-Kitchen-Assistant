@@ -23,7 +23,7 @@
     "DOP_Refrigerate_Max": 6,
     "DOP_Refrigerate_Metric": "Months",
     "refrigerate": 1,
-    "refrigerate_after_opening": 3,
+    "refrigerate_after_opening_min": 3,
     "refrigerate_after_opening_max": 4,
     "refrigerate_after_opening_metric": "Weeks",
     "refrigerateOpen": 1
@@ -80,7 +80,7 @@
     "DOP_Refrigerate_Max": 2,
     "DOP_Refrigerate_Metric": "Weeks",
     "refrigerate": 1,
-    "refrigerate_after_opening": 1,
+    "refrigerate_after_opening_min": 1,
     "refrigerate_after_opening_max": 1,
     "refrigerate_after_opening_metric": "Weeks",
     "refrigerateOpen": 1
@@ -100,10 +100,19 @@
     "DOP_Refrigerate_Max": 1,
     "DOP_Refrigerate_Metric": "Months",
     "refrigerate": 1,
-    "refrigerate_after_opening": 1,
+    "refrigerate_after_opening_min": 1,
     "refrigerate_after_opening_max": 1,
     "refrigerate_after_opening_metric": "Weeks",
     "refrigerateOpen": 1
+  },
+  {
+    "name": "Cream",
+    "Name_subtitle": "whipped, sweetened",
+    "Keywords": "Cream,whipped, sweetened",
+    "Refrigerate_min": 1,
+    "Refrigerate_max": 1,
+    "refrigerate_metric": "Days",
+    "refrigerate": 1
   },
   {
     "name": "Cream",
@@ -149,7 +158,7 @@
     "DOP_Refrigerate_Max": 7,
     "DOP_Refrigerate_Metric": "Days",
     "refrigerate": 1,
-    "refrigerate_after_opening": 3,
+    "refrigerate_after_opening_min": 3,
     "refrigerate_after_opening_max": 3,
     "refrigerate_after_opening_metric": "Days",
     "refrigerateOpen": 1
@@ -173,6 +182,32 @@
     "refrigerate": 1
   },
   {
+    "name": "Eggs",
+    "Name_subtitle": "raw whites, yolks",
+    "Keywords": "Eggs,raw whites, yolks,egg,whites",
+    "Refrigerate_min": 2,
+    "Refrigerate_max": 4,
+    "refrigerate_metric": "Days",
+    "refrigerate": 1
+  },
+  {
+    "name": "Eggs",
+    "Name_subtitle": "hard boiled cooked",
+    "Keywords": "Eggs,egg,hard boiled cooked,boiled,hard boiled",
+    "Refrigerate_min": 1,
+    "Refrigerate_max": 1,
+    "refrigerate_metric": "Weeks",
+    "refrigerate": 1
+  },
+  {
+    "name": "Egg dishes",
+    "Keywords": "Egg dishes,egg,dishes",
+    "Refrigerate_min": 3,
+    "Refrigerate_max": 4,
+    "refrigerate_metric": "Days",
+    "refrigerate": 1
+  },
+  {
     "name": "Kefir",
     "Name_subtitle": "fermented milk",
     "Keywords": "Kefir,fermented milk,milk,fermented",
@@ -180,7 +215,7 @@
     "DOP_Refrigerate_Max": 1,
     "DOP_Refrigerate_Metric": "Weeks",
     "refrigerate": 1,
-    "refrigerate_after_opening": 1,
+    "refrigerate_after_opening_min": 1,
     "refrigerate_after_opening_max": 2,
     "refrigerate_after_opening_metric": "Days",
     "refrigerateOpen": 1
@@ -196,7 +231,7 @@
   {
     "name": "Pudding",
     "Keywords": "Pudding",
-    "refrigerate_after_opening": 2,
+    "refrigerate_after_opening_min": 2,
     "refrigerate_after_opening_max": 2,
     "refrigerate_after_opening_metric": "Days",
     "refrigerate": 1,
@@ -631,7 +666,7 @@
     "DOP_Refrigerate_Max": 1,
     "DOP_Refrigerate_Metric": "Weeks",
     "refrigerate": 1,
-    "refrigerate_after_opening": 1,
+    "refrigerate_after_opening_min": 1,
     "refrigerate_after_opening_max": 1,
     "refrigerate_after_opening_metric": "Weeks",
     "refrigerateOpen": 1
@@ -698,7 +733,7 @@
     "DOP_Refrigerate_Max": 9,
     "DOP_Refrigerate_Metric": "Months",
     "refrigerate": 1,
-    "refrigerate_after_opening": 3,
+    "refrigerate_after_opening_min": 3,
     "refrigerate_after_opening_max": 5,
     "refrigerate_after_opening_metric": "Days",
     "refrigerateOpen": 1
@@ -800,7 +835,7 @@
     "DOP_Refrigerate_Max": 2,
     "DOP_Refrigerate_Metric": "Weeks",
     "refrigerate": 1,
-    "refrigerate_after_opening": 1,
+    "refrigerate_after_opening_min": 1,
     "refrigerate_after_opening_max": 1,
     "refrigerate_after_opening_metric": "Weeks",
     "refrigerateOpen": 1
@@ -852,7 +887,7 @@
     "name": "Bacon",
     "Name_subtitle": "fully cooked",
     "Keywords": "Bacon,fully cooked,cooked",
-    "refrigerate_after_opening": 5,
+    "refrigerate_after_opening_min": 5,
     "refrigerate_after_opening_max": 14,
     "refrigerate_after_opening_metric": "Days",
     "refrigerate": 1,
@@ -862,7 +897,7 @@
     "name": "Ham",
     "Name_subtitle": "shelf-stable cans",
     "Keywords": "Ham,shelf stable cans,cans,shelf stable,shelf,stable,can",
-    "refrigerate_after_opening": 5,
+    "refrigerate_after_opening_min": 5,
     "refrigerate_after_opening_max": 14,
     "refrigerate_after_opening_metric": "Days",
     "refrigerate": 1,
@@ -872,7 +907,7 @@
     "name": "Jerky",
     "Name_subtitle": "commercially dried",
     "Keywords": "Jerky,commercially dried,dried",
-    "refrigerate_after_opening": 2,
+    "refrigerate_after_opening_min": 2,
     "refrigerate_after_opening_max": 3,
     "refrigerate_after_opening_metric": "Months",
     "refrigerate": 1,
@@ -885,13 +920,17 @@
     "pantry_min": 1,
     "pantry_max": 2,
     "pantry_metric": "Months",
-    "pantry": 1
+    "pantry": 1,
+    "Refrigerate_min": 1,
+    "Refrigerate_max": 2,
+    "refrigerate_metric": "Months",
+    "refrigerate": 1
   },
   {
     "name": "Meat products",
     "Name_subtitle": "canned",
     "Keywords": "Meat products,products,canned,meat,product",
-    "refrigerate_after_opening": 3,
+    "refrigerate_after_opening_min": 3,
     "refrigerate_after_opening_max": 4,
     "refrigerate_after_opening_metric": "Days",
     "refrigerate": 1,
@@ -900,7 +939,7 @@
   {
     "name": "Retort pouches or boxes",
     "Keywords": "Retort pouches,boxes,box,retort,pouch",
-    "refrigerate_after_opening": 3,
+    "refrigerate_after_opening_min": 3,
     "refrigerate_after_opening_max": 4,
     "refrigerate_after_opening_metric": "Days",
     "refrigerate": 1,
@@ -1049,6 +1088,47 @@
     "refrigerate": 1
   },
   {
+    "name": "Stuffed, raw chicken breasts",
+    "Keywords": "Stuffed,raw chicken breasts,breast,chicken,chicken breasts",
+    "Refrigerate_min": 1,
+    "Refrigerate_max": 2,
+    "refrigerate_metric": "Days",
+    "refrigerate": 1
+  },
+  {
+    "name": "Raw kabobs with vegetables",
+    "Keywords": "Raw kabobs,vegetables,kabobs,kabob,vegetable",
+    "Refrigerate_min": 1,
+    "Refrigerate_max": 2,
+    "refrigerate_metric": "Days",
+    "refrigerate": 1
+  },
+  {
+    "name": "Cooked poultry dishes",
+    "Keywords": "Cooked poultry dishes,poultry dishes,poultry",
+    "Refrigerate_min": 3,
+    "Refrigerate_max": 4,
+    "refrigerate_metric": "Days",
+    "refrigerate": 1
+  },
+  {
+    "name": "Fried chicken",
+    "Keywords": "Fried chicken,chicken",
+    "Refrigerate_min": 3,
+    "Refrigerate_max": 4,
+    "refrigerate_metric": "Days",
+    "refrigerate": 1
+  },
+  {
+    "name": "Poultry pieces",
+    "Name_subtitle": "covered with gravy or broth",
+    "Keywords": "Poultry pieces,gravy,broth,poultry,pieces,piece",
+    "Refrigerate_min": 3,
+    "Refrigerate_max": 4,
+    "refrigerate_metric": "Days",
+    "refrigerate": 1
+  },
+  {
     "name": "Rotisserie chicken",
     "Keywords": "Rotisserie chicken,chicken,Rotisserie",
     "DOP_Refrigerate_Min": 3,
@@ -1059,7 +1139,7 @@
   {
     "name": "Canned chicken",
     "Keywords": "Canned chicken,chicken,canned,can",
-    "refrigerate_after_opening": 3,
+    "refrigerate_after_opening_min": 3,
     "refrigerate_after_opening_max": 4,
     "refrigerate_after_opening_metric": "Days",
     "refrigerate": 1,
@@ -1068,7 +1148,7 @@
   {
     "name": "Retort pouches or boxes",
     "Keywords": "Retort pouches,boxes,box,retort,pouch",
-    "refrigerate_after_opening": 3,
+    "refrigerate_after_opening_min": 3,
     "refrigerate_after_opening_max": 4,
     "refrigerate_after_opening_metric": "Days",
     "refrigerate": 1,
@@ -1109,10 +1189,19 @@
     "DOP_Refrigerate_Max": 4,
     "DOP_Refrigerate_Metric": "Weeks",
     "refrigerate": 1,
-    "refrigerate_after_opening": 2,
+    "refrigerate_after_opening_min": 2,
     "refrigerate_after_opening_max": 2,
     "refrigerate_after_opening_metric": "Days",
     "refrigerateOpen": 1
+  },
+  {
+    "name": "Cooked fish",
+    "Name_subtitle": "all",
+    "Keywords": "Cooked fish,fish,all",
+    "Refrigerate_min": 3,
+    "Refrigerate_max": 4,
+    "refrigerate_metric": "Days",
+    "refrigerate": 1
   },
   {
     "name": "Scallops",
@@ -1148,13 +1237,22 @@
   },
   {
     "name": "Crab meat",
+    "Name_subtitle": "fresh",
+    "Keywords": "Crab meat,meat,fresh,crab",
+    "Refrigerate_min": 1,
+    "Refrigerate_max": 3,
+    "refrigerate_metric": "Days",
+    "refrigerate": 1
+  },
+  {
+    "name": "Crab meat",
     "Name_subtitle": "pasteurized",
     "Keywords": "Crab meat,meat,pasteurized,crab",
     "DOP_Refrigerate_Min": 10,
     "DOP_Refrigerate_Max": 12,
     "DOP_Refrigerate_Metric": "Months",
     "refrigerate": 1,
-    "refrigerate_after_opening": 3,
+    "refrigerate_after_opening_min": 3,
     "refrigerate_after_opening_max": 5,
     "refrigerate_after_opening_metric": "Days",
     "refrigerateOpen": 1
@@ -1209,6 +1307,15 @@
     "DOP_Refrigerate_Min": 1,
     "DOP_Refrigerate_Max": 2,
     "DOP_Refrigerate_Metric": "Days",
+    "refrigerate": 1
+  },
+  {
+    "name": "Cooked shellfish",
+    "Name_subtitle": "all",
+    "Keywords": "Cooked shellfish,shellfish,fish,cooked",
+    "Refrigerate_min": 3,
+    "Refrigerate_max": 4,
+    "refrigerate_metric": "Days",
     "refrigerate": 1
   },
   {
@@ -1285,11 +1392,47 @@
     "name": "Textured soy protein",
     "Name_subtitle": "(TSP)",
     "Keywords": "Textured soy protein,protein,TSP,soy protein,soy",
-    "pantry_after_opening": 3,
+    "pantry_after_opening_min": 3,
     "pantry_after_opening_max": 4,
     "pantry_after_opening_metric": "Months",
     "pantry": 1,
     "pantryOpen": 1
+  },
+  {
+    "name": "Re-hydrated textured soy protein",
+    "Name_subtitle": "(TSP)",
+    "Keywords": "Re hydrated textured soy protein,protein,TSP,soy,soy protein,textured soy protein,Re hydrated ",
+    "Refrigerate_min": 3,
+    "Refrigerate_max": 4,
+    "refrigerate_metric": "Days",
+    "refrigerate": 1
+  },
+  {
+    "name": "Leftovers",
+    "Name_subtitle": "with meat, fish, poultry, or egg",
+    "Keywords": "Leftovers,meat,fish,poultry,egg,leftover",
+    "Refrigerate_min": 3,
+    "Refrigerate_max": 4,
+    "refrigerate_metric": "Days",
+    "refrigerate": 1
+  },
+  {
+    "name": "Leftovers",
+    "Name_subtitle": "without meat, fish, poultry, or egg (such as cooked vegitables, rice, or potatoes)",
+    "Keywords": "leftover,leftovers,without meat,fish,poultry,egg,cooked vegetables,rice,potatoes,meat,vegetables,potato,vegetable",
+    "Refrigerate_min": 3,
+    "Refrigerate_max": 4,
+    "refrigerate_metric": "Days",
+    "refrigerate": 1
+  },
+  {
+    "name": "Leftovers",
+    "Name_subtitle": "pizza",
+    "Keywords": "Leftovers,pizza",
+    "Refrigerate_min": 3,
+    "Refrigerate_max": 4,
+    "refrigerate_metric": "Days",
+    "refrigerate": 1
   },
   {
     "name": "Commercial brand vacuum-packed dinners",
@@ -1301,13 +1444,37 @@
     "refrigerate": 1
   },
   {
+    "name": "Cooked pasta",
+    "Keywords": "Cooked pasta,pasta",
+    "Refrigerate_min": 3,
+    "Refrigerate_max": 5,
+    "refrigerate_metric": "Days",
+    "refrigerate": 1
+  },
+  {
+    "name": "Cooked rice",
+    "Keywords": "Cooked rice,rice",
+    "Refrigerate_min": 4,
+    "Refrigerate_max": 6,
+    "refrigerate_metric": "Days",
+    "refrigerate": 1
+  },
+  {
     "name": "Fruit, cut",
     "Keywords": "Fruit,cut",
-    "refrigerate_after_opening": 4,
+    "refrigerate_after_opening_min": 4,
     "refrigerate_after_opening_max": 4,
     "refrigerate_after_opening_metric": "Days",
     "refrigerate": 1,
     "refrigerateOpen": 1
+  },
+  {
+    "name": "Guacamole",
+    "Keywords": "Guacamole",
+    "Refrigerate_min": 3,
+    "Refrigerate_max": 4,
+    "refrigerate_metric": "Days",
+    "refrigerate": 1
   },
   {
     "name": "Hummus",
@@ -1317,10 +1484,19 @@
     "DOP_Refrigerate_Max": 3,
     "DOP_Refrigerate_Metric": "Months",
     "refrigerate": 1,
-    "refrigerate_after_opening": 7,
+    "refrigerate_after_opening_min": 7,
     "refrigerate_after_opening_max": 7,
     "refrigerate_after_opening_metric": "Days",
     "refrigerateOpen": 1
+  },
+  {
+    "name": "Hummus",
+    "Name_subtitle": "traditional (no preservatives, not pasteurized)",
+    "Keywords": "Hummus,traditional,no preservatives,not pasteurized,no preservative,preservatives,preservative,pasteurized",
+    "Refrigerate_min": 7,
+    "Refrigerate_max": 7,
+    "refrigerate_metric": "Days",
+    "refrigerate": 1
   },
   {
     "name": "Luncheon meat or poultry",
@@ -1338,6 +1514,15 @@
     "DOP_Refrigerate_Min": 3,
     "DOP_Refrigerate_Max": 4,
     "DOP_Refrigerate_Metric": "Days",
+    "refrigerate": 1
+  },
+  {
+    "name": "Meats",
+    "Name_subtitle": "covered with gravy or broth",
+    "Keywords": "Meats,gravy,broth,meat",
+    "Refrigerate_min": 3,
+    "Refrigerate_max": 4,
+    "refrigerate_metric": "Days",
     "refrigerate": 1
   },
   {
@@ -1365,16 +1550,32 @@
     "DOP_Refrigerate_Max": 2,
     "DOP_Refrigerate_Metric": "Weeks",
     "refrigerate": 1,
-    "refrigerate_after_opening": 3,
+    "refrigerate_after_opening_min": 3,
     "refrigerate_after_opening_max": 5,
     "refrigerate_after_opening_metric": "Days",
     "refrigerateOpen": 1
   },
   {
+    "name": "Soup, stews",
+    "Keywords": "Soup,stews,stew",
+    "Refrigerate_min": 3,
+    "Refrigerate_max": 4,
+    "refrigerate_metric": "Days",
+    "refrigerate": 1
+  },
+  {
+    "name": "Casseroles",
+    "Keywords": "Casseroles,Casserole",
+    "Refrigerate_min": 3,
+    "Refrigerate_max": 4,
+    "refrigerate_metric": "Days",
+    "refrigerate": 1
+  },
+  {
     "name": "Commercial bread products",
     "Name_subtitle": "including pan breads, flat breads, rolls, and buns",
     "Keywords": "Commercial bread products,pan breads,flat breads,rolls,buns,bread products,bread,products,product,pan,breads,bread,flat,roll,bun",
-    "refrigerate_after_opening": 2,
+    "refrigerate_after_opening_min": 2,
     "refrigerate_after_opening_max": 3,
     "refrigerate_after_opening_metric": "Weeks",
     "refrigerate": 1,
@@ -1384,7 +1585,7 @@
     "name": "Tortillas",
     "Name_subtitle": "flour",
     "Keywords": "Tortillas,Tortilla",
-    "refrigerate_after_opening": 3,
+    "refrigerate_after_opening_min": 3,
     "refrigerate_after_opening_max": 3,
     "refrigerate_after_opening_metric": "Months",
     "refrigerate": 1,
@@ -1393,7 +1594,7 @@
   {
     "name": "Commercial cakes and muffins",
     "Keywords": "Commercial cakes,cake,muffin,muffins",
-    "refrigerate_after_opening": 7,
+    "refrigerate_after_opening_min": 7,
     "refrigerate_after_opening_max": 10,
     "refrigerate_after_opening_metric": "Days",
     "refrigerate": 1,
@@ -1402,7 +1603,7 @@
   {
     "name": "Cheesecake",
     "Keywords": "Cheesecake,cake,cheese",
-    "refrigerate_after_opening": 5,
+    "refrigerate_after_opening_min": 5,
     "refrigerate_after_opening_max": 7,
     "refrigerate_after_opening_metric": "Days",
     "refrigerate": 1,
@@ -1411,7 +1612,7 @@
   {
     "name": "Dairy filled eclairs",
     "Keywords": "Dairy filled eclairs,dairy filled,eclairs,éclair,dairy",
-    "refrigerate_after_opening": 2,
+    "refrigerate_after_opening_min": 2,
     "refrigerate_after_opening_max": 3,
     "refrigerate_after_opening_metric": "Days",
     "refrigerate": 1,
@@ -1420,7 +1621,7 @@
   {
     "name": "Doughnuts",
     "Keywords": "Doughnuts,doughnut,dough,nut",
-    "refrigerate_after_opening": 2,
+    "refrigerate_after_opening_min": 2,
     "refrigerate_after_opening_max": 2,
     "refrigerate_after_opening_metric": "Days",
     "refrigerate": 1,
@@ -1429,7 +1630,7 @@
   {
     "name": "Fruit cake",
     "Keywords": "Fruit cake,fruit,cake",
-    "refrigerate_after_opening": 12,
+    "refrigerate_after_opening_min": 12,
     "refrigerate_after_opening_max": 12,
     "refrigerate_after_opening_metric": "Months",
     "refrigerate": 1,
@@ -1438,7 +1639,7 @@
   {
     "name": "Pastries, danish",
     "Keywords": "Pastries,danish,pastry",
-    "refrigerate_after_opening": 14,
+    "refrigerate_after_opening_min": 14,
     "refrigerate_after_opening_max": 14,
     "refrigerate_after_opening_metric": "Months",
     "refrigerate": 1,
@@ -1448,7 +1649,7 @@
     "name": "Cream pies",
     "Name_subtitle": "banana cream, coconut cream, butterscotch",
     "Keywords": "Pies,cream,pie, banana, banana cream,coconut,coconut cream,butterscotch",
-    "refrigerate_after_opening": 3,
+    "refrigerate_after_opening_min": 3,
     "refrigerate_after_opening_max": 4,
     "refrigerate_after_opening_metric": "Days",
     "refrigerate": 1,
@@ -1458,7 +1659,7 @@
     "name": "Chiffon pies",
     "Name_subtitle": "chocolate, lemon",
     "Keywords": "Pies,chiffon,pie,chocolate,lemon,chocolate pie,lemon pie",
-    "refrigerate_after_opening": 1,
+    "refrigerate_after_opening_min": 1,
     "refrigerate_after_opening_max": 2,
     "refrigerate_after_opening_metric": "Days",
     "refrigerate": 1,
@@ -1472,7 +1673,7 @@
     "pantry_max": 2,
     "pantry_metric": "Days",
     "pantry": 1,
-    "refrigerate_after_opening": 1,
+    "refrigerate_after_opening_min": 1,
     "refrigerate_after_opening_max": 1,
     "refrigerate_after_opening_metric": "Weeks",
     "refrigerate": 1,
@@ -1484,9 +1685,7 @@
     "Keywords": "Pies,mincemeat,pie,meat,mince",
     "pantry_min": 2,
     "pantry_max": 2,
-    "pantry_metric": "Hours",
-    "pantry": 1,
-    "refrigerate_after_opening": 1,
+    "refrigerate_after_opening_min": 1,
     "refrigerate_after_opening_max": 1,
     "refrigerate_after_opening_metric": "Weeks",
     "refrigerate": 1,
@@ -1498,9 +1697,7 @@
     "Keywords": "Pies,Pie,pecan",
     "pantry_min": 2,
     "pantry_max": 2,
-    "pantry_metric": "Hours",
-    "pantry": 1,
-    "refrigerate_after_opening": 3,
+    "refrigerate_after_opening_min": 3,
     "refrigerate_after_opening_max": 4,
     "refrigerate_after_opening_metric": "Days",
     "refrigerate": 1,
@@ -1512,9 +1709,7 @@
     "Keywords": "Pies,Pie,pumpkin",
     "pantry_min": 2,
     "pantry_max": 2,
-    "pantry_metric": "Hours",
-    "pantry": 1,
-    "refrigerate_after_opening": 3,
+    "refrigerate_after_opening_min": 3,
     "refrigerate_after_opening_max": 4,
     "refrigerate_after_opening_metric": "Days",
     "refrigerate": 1,
@@ -1525,9 +1720,7 @@
     "Keywords": "Quiche",
     "pantry_min": 2,
     "pantry_max": 2,
-    "pantry_metric": "Hours",
-    "pantry": 1,
-    "refrigerate_after_opening": 3,
+    "refrigerate_after_opening_min": 3,
     "refrigerate_after_opening_max": 5,
     "refrigerate_after_opening_metric": "Days",
     "refrigerate": 1,
@@ -1536,7 +1729,7 @@
   {
     "name": "Baking powder",
     "Keywords": "Baking powder,baking,powder",
-    "pantry_after_opening": 3,
+    "pantry_after_opening_min": 3,
     "pantry_after_opening_max": 6,
     "pantry_after_opening_metric": "Months",
     "pantry": 1,
@@ -1545,7 +1738,7 @@
   {
     "name": "Baking soda",
     "Keywords": "Baking soda,soda,baking",
-    "pantry_after_opening": 6,
+    "pantry_after_opening_min": 6,
     "pantry_after_opening_max": 6,
     "pantry_after_opening_metric": "Months",
     "pantry": 1,
@@ -1555,7 +1748,7 @@
     "name": "Chocolate",
     "Name_subtitle": "unsweetened and semi-sweet, solid",
     "Keywords": "Chocolate,unsweetened,semi sweet,solid,sweet",
-    "pantry_after_opening": 1,
+    "pantry_after_opening_min": 1,
     "pantry_after_opening_max": 1,
     "pantry_after_opening_metric": "Years",
     "pantry": 1,
@@ -1564,7 +1757,7 @@
   {
     "name": "Cocoa and cocoa mixes",
     "Keywords": "Cocoa,cocoa mixes,mixes,mix",
-    "pantry_after_opening": 1,
+    "pantry_after_opening_min": 1,
     "pantry_after_opening_max": 1,
     "pantry_after_opening_metric": "Years",
     "pantry": 1,
@@ -1574,25 +1767,19 @@
     "name": "Cornmeal",
     "Name_subtitle": "regular, degerminated",
     "Keywords": "Cornmeal,regular,degerminated,germinated,germinate,corn,meal",
-    "pantry_after_opening": 2,
+    "pantry_after_opening_min": 2,
     "pantry_after_opening_max": 2,
     "pantry_after_opening_metric": "Years",
     "pantry": 1,
     "pantryOpen": 1,
-    "refrigerate_after_opening": 1,
-    "refrigerate_after_opening_max": 1,
-    "refrigerate_after_opening_metric": "Year",
-    "refrigerate": 1,
-    "refrigerateOpen": 1
+    "refrigerate_after_opening_min": 1,
+    "refrigerate_after_opening_max": 1
   },
   {
     "name": "Cornmeal",
     "Name_subtitle": "stone ground or blue",
     "Keywords": "Cornmeal,stone ground,blue,ground,stone,corn,meal",
-    "pantry_after_opening_metric": "Not Recommended",
-    "pantry": 1,
-    "pantryOpen": 1,
-    "refrigerate_after_opening": 2,
+    "refrigerate_after_opening_min": 2,
     "refrigerate_after_opening_max": 4,
     "refrigerate_after_opening_metric": "Months",
     "refrigerate": 1,
@@ -1601,7 +1788,7 @@
   {
     "name": "Cornstarch",
     "Keywords": "Cornstarch,corn,starch",
-    "pantry_after_opening": 18,
+    "pantry_after_opening_min": 18,
     "pantry_after_opening_max": 18,
     "pantry_after_opening_metric": "Months",
     "pantry": 1,
@@ -1611,22 +1798,19 @@
     "name": "Flour",
     "Name_subtitle": "white",
     "Keywords": "Flour,white",
-    "pantry_after_opening": 6,
+    "pantry_after_opening_min": 6,
     "pantry_after_opening_max": 8,
     "pantry_after_opening_metric": "Months",
     "pantry": 1,
     "pantryOpen": 1,
-    "refrigerate_after_opening": 1,
-    "refrigerate_after_opening_max": 1,
-    "refrigerate_after_opening_metric": "Year",
-    "refrigerate": 1,
-    "refrigerateOpen": 1
+    "refrigerate_after_opening_min": 1,
+    "refrigerate_after_opening_max": 1
   },
   {
     "name": "Flour",
     "Name_subtitle": "whole wheat",
     "Keywords": "Flour,whole wheat,wheat",
-    "refrigerate_after_opening": 6,
+    "refrigerate_after_opening_min": 6,
     "refrigerate_after_opening_max": 8,
     "refrigerate_after_opening_metric": "Months",
     "refrigerate": 1,
@@ -1635,7 +1819,7 @@
   {
     "name": "Frosting or icing",
     "Keywords": "Frosting,icing,frost,ice",
-    "refrigerate_after_opening": 2,
+    "refrigerate_after_opening_min": 2,
     "refrigerate_after_opening_max": 3,
     "refrigerate_after_opening_metric": "Weeks",
     "refrigerate": 1,
@@ -1645,17 +1829,9 @@
     "name": "Gelatin",
     "Name_subtitle": "flavored",
     "Keywords": "Gelatin,flavor,flavored",
-    "pantry_after_opening": 3,
+    "pantry_after_opening_min": 3,
     "pantry_after_opening_max": 4,
     "pantry_after_opening_metric": "Months",
-    "pantry": 1,
-    "pantryOpen": 1
-  },
-  {
-    "name": "Gelatin",
-    "Name_subtitle": "unflavored",
-    "Keywords": "Gelatin,unflavor,unflavored",
-    "pantry_after_opening_metric": "Not Recommended",
     "pantry": 1,
     "pantryOpen": 1
   },
@@ -1663,12 +1839,12 @@
     "name": "Oils",
     "Name_subtitle": "olive or vegetable",
     "Keywords": "Oils,olive,vegetable,oil",
-    "pantry_after_opening": 3,
+    "pantry_after_opening_min": 3,
     "pantry_after_opening_max": 5,
     "pantry_after_opening_metric": "Months",
     "pantry": 1,
     "pantryOpen": 1,
-    "refrigerate_after_opening": 4,
+    "refrigerate_after_opening_min": 4,
     "refrigerate_after_opening_max": 4,
     "refrigerate_after_opening_metric": "Months",
     "refrigerate": 1,
@@ -1677,12 +1853,12 @@
   {
     "name": "Nut oils",
     "Keywords": "Nut oils,nut,oils,oil",
-    "pantry_after_opening": 3,
+    "pantry_after_opening_min": 3,
     "pantry_after_opening_max": 8,
     "pantry_after_opening_metric": "Months",
     "pantry": 1,
     "pantryOpen": 1,
-    "refrigerate_after_opening": 6,
+    "refrigerate_after_opening_min": 6,
     "refrigerate_after_opening_max": 8,
     "refrigerate_after_opening_metric": "Months",
     "refrigerate": 1,
@@ -1691,7 +1867,7 @@
   {
     "name": "Vegetable oil sprays",
     "Keywords": "Vegetable oil sprays,sprays,oil,vegetable,vegetable oil",
-    "pantry_after_opening": 1,
+    "pantry_after_opening_min": 1,
     "pantry_after_opening_max": 1,
     "pantry_after_opening_metric": "Years",
     "pantry": 1,
@@ -1701,7 +1877,7 @@
     "name": "Shortening",
     "Name_subtitle": "solid",
     "Keywords": "Shortening,solid",
-    "pantry_after_opening": 6,
+    "pantry_after_opening_min": 6,
     "pantry_after_opening_max": 12,
     "pantry_after_opening_metric": "Months",
     "pantry": 1,
@@ -1710,12 +1886,12 @@
   {
     "name": "Tamarind paste",
     "Keywords": "Tamarind paste,paste,tamarind",
-    "pantry_after_opening": 6,
+    "pantry_after_opening_min": 6,
     "pantry_after_opening_max": 6,
     "pantry_after_opening_metric": "Months",
     "pantry": 1,
     "pantryOpen": 1,
-    "refrigerate_after_opening": 2,
+    "refrigerate_after_opening_min": 2,
     "refrigerate_after_opening_max": 3,
     "refrigerate_after_opening_metric": "Months",
     "refrigerate": 1,
@@ -1724,7 +1900,7 @@
   {
     "name": "Chili powder",
     "Keywords": "Chili powder,powder,chili",
-    "pantry_after_opening": 2,
+    "pantry_after_opening_min": 2,
     "pantry_after_opening_max": 2,
     "pantry_after_opening_metric": "Years",
     "pantry": 1,
@@ -1733,7 +1909,7 @@
   {
     "name": "Seasoning blends",
     "Keywords": "Seasoning blends,blends,seasoning,blend",
-    "pantry_after_opening": 1,
+    "pantry_after_opening_min": 1,
     "pantry_after_opening_max": 2,
     "pantry_after_opening_metric": "Years",
     "pantry": 1,
@@ -1743,7 +1919,7 @@
     "name": "Herbs",
     "Name_subtitle": "dried",
     "Keywords": "Herbs,dried,herb",
-    "pantry_after_opening": 1,
+    "pantry_after_opening_min": 1,
     "pantry_after_opening_max": 2,
     "pantry_after_opening_metric": "Years",
     "pantry": 1,
@@ -1753,7 +1929,7 @@
     "name": "Spice/spices",
     "Name_subtitle": "whole",
     "Keywords": "Spice,spices,whole",
-    "pantry_after_opening": 3,
+    "pantry_after_opening_min": 3,
     "pantry_after_opening_max": 4,
     "pantry_after_opening_metric": "Years",
     "pantry": 1,
@@ -1763,7 +1939,7 @@
     "name": "Spice/spices",
     "Name_subtitle": "ground",
     "Keywords": "Spice,spices,ground",
-    "pantry_after_opening": 2,
+    "pantry_after_opening_min": 2,
     "pantry_after_opening_max": 3,
     "pantry_after_opening_metric": "Years",
     "pantry": 1,
@@ -1773,46 +1949,36 @@
     "name": "Sugar",
     "Name_subtitle": "brown",
     "Keywords": "Sugar,brown",
-    "pantry_metric": "Indefinitely",
-    "pantry": 1,
-    "pantry_after_opening": 18,
+    "pantry_after_opening_min": 18,
     "pantry_after_opening_max": 24,
     "pantry_after_opening_metric": "Months",
+    "pantry": 1,
     "pantryOpen": 1
   },
   {
     "name": "Sugar",
     "Name_subtitle": "granulated",
     "Keywords": "Sugar,granulated",
-    "pantry_metric": "Indefinitely",
-    "pantry": 1,
-    "pantry_after_opening": 18,
+    "pantry_after_opening_min": 18,
     "pantry_after_opening_max": 24,
     "pantry_after_opening_metric": "Months",
+    "pantry": 1,
     "pantryOpen": 1
   },
   {
     "name": "Sugar",
     "Name_subtitle": "confectioners",
     "Keywords": "Sugar,confectioners,confectioner",
-    "pantry_metric": "Indefinitely",
-    "pantry": 1,
-    "pantry_after_opening": 18,
+    "pantry_after_opening_min": 18,
     "pantry_after_opening_max": 24,
     "pantry_after_opening_metric": "Months",
-    "pantryOpen": 1
-  },
-  {
-    "name": "Sugar substitutes",
-    "Keywords": "Sugar substitutes,sugar,substitutes,substitute",
-    "pantry_after_opening_metric": "Indefinitely",
     "pantry": 1,
     "pantryOpen": 1
   },
   {
     "name": "Tapiocas",
     "Keywords": "Tapiocas,Tapioca",
-    "pantry_after_opening": 12,
+    "pantry_after_opening_min": 12,
     "pantry_after_opening_max": 12,
     "pantry_after_opening_metric": "Months",
     "pantry": 1,
@@ -1829,20 +1995,26 @@
   {
     "name": "Apricots",
     "Keywords": "Apricots,Apricot",
-    "pantry_metric": "When Ripe",
-    "pantry": 1
+    "Refrigerate_min": 2,
+    "Refrigerate_max": 5,
+    "refrigerate_metric": "Days",
+    "refrigerate": 1
   },
   {
     "name": "Avocados",
     "Keywords": "Avocados,Avocado",
-    "pantry_metric": "When Ripe",
-    "pantry": 1
+    "Refrigerate_min": 3,
+    "Refrigerate_max": 4,
+    "refrigerate_metric": "Days",
+    "refrigerate": 1
   },
   {
     "name": "Bananas",
     "Keywords": "Bananas,banana",
-    "pantry_metric": "When Ripe",
-    "pantry": 1
+    "Refrigerate_min": 3,
+    "Refrigerate_max": 3,
+    "refrigerate_metric": "Days",
+    "refrigerate": 1
   },
   {
     "name": "Berries",
@@ -1873,8 +2045,10 @@
   {
     "name": "Cherimoya",
     "Keywords": "Cherimoya",
-    "pantry_metric": "When Ripe",
-    "pantry": 1
+    "Refrigerate_min": 4,
+    "Refrigerate_max": 4,
+    "refrigerate_metric": "Days",
+    "refrigerate": 1
   },
   {
     "name": "Citrus fruit",
@@ -1889,7 +2063,7 @@
     "name": "Coconut",
     "Name_subtitle": "shredded",
     "Keywords": "Coconut,shredded",
-    "refrigerate_after_opening": 8,
+    "refrigerate_after_opening_min": 8,
     "refrigerate_after_opening_max": 8,
     "refrigerate_after_opening_metric": "Months",
     "refrigerate": 1,
@@ -1931,25 +2105,27 @@
   {
     "name": "Guava",
     "Keywords": "Guava",
-    "pantry_metric": "When Ripe",
-    "pantry": 1
+    "Refrigerate_min": 2,
+    "Refrigerate_max": 4,
+    "refrigerate_metric": "Days",
+    "refrigerate": 1
   },
   {
     "name": "Kiwi fruit",
     "Keywords": "Kiwi fruit,kiwi,fruit",
-    "pantry_metric": "When Ripe",
-    "pantry": 1
+    "Refrigerate_min": 3,
+    "Refrigerate_max": 6,
+    "refrigerate_metric": "Days",
+    "refrigerate": 1
   },
   {
     "name": "Melons",
     "Keywords": "Melons,melon",
-    "pantry_metric": "When Ripe",
-    "pantry": 1,
     "DOP_Refrigerate_Min": 2,
     "DOP_Refrigerate_Max": 2,
     "DOP_Refrigerate_Metric": "Weeks",
     "refrigerate": 1,
-    "refrigerate_after_opening": 2,
+    "refrigerate_after_opening_min": 2,
     "refrigerate_after_opening_max": 4,
     "refrigerate_after_opening_metric": "Days",
     "refrigerateOpen": 1
@@ -1965,20 +2141,26 @@
   {
     "name": "Peaches, nectarines, plums, pears, sapote",
     "Keywords": "Peaches,nectarines,plums,pears,sapote,peach,nectarine,plum,pear",
-    "pantry_metric": "When Ripe",
-    "pantry": 1
+    "Refrigerate_min": 3,
+    "Refrigerate_max": 5,
+    "refrigerate_metric": "Days",
+    "refrigerate": 1
   },
   {
     "name": "Pineapple",
     "Keywords": "Pineapple",
-    "pantry_metric": "When Ripe",
-    "pantry": 1
+    "Refrigerate_min": 5,
+    "Refrigerate_max": 7,
+    "refrigerate_metric": "Days",
+    "refrigerate": 1
   },
   {
     "name": "Plantains",
     "Keywords": "Plantains,plantain",
-    "pantry_metric": "When Ripe",
-    "pantry": 1
+    "Refrigerate_min": 3,
+    "Refrigerate_max": 5,
+    "refrigerate_metric": "Days",
+    "refrigerate": 1
   },
   {
     "name": "Pomegranate",
@@ -2011,7 +2193,7 @@
     "DOP_Refrigerate_Max": 2,
     "DOP_Refrigerate_Metric": "Weeks",
     "refrigerate": 1,
-    "refrigerate_after_opening": 5,
+    "refrigerate_after_opening_min": 5,
     "refrigerate_after_opening_max": 5,
     "refrigerate_after_opening_metric": "Days",
     "refrigerateOpen": 1
@@ -2288,12 +2470,6 @@
     "refrigerate": 1
   },
   {
-    "name": "Tomatoes",
-    "Keywords": "Tomatoes,tomato",
-    "pantry_metric": "When Ripe",
-    "pantry": 1
-  },
-  {
     "name": "Turnips",
     "Keywords": "Turnips,turnip",
     "DOP_Refrigerate_Min": 2,
@@ -2310,10 +2486,118 @@
     "refrigerate": 1
   },
   {
+    "name": "Dough",
+    "Name_subtitle": "commercial (bread or cookie)",
+    "Keywords": "Dough,commercial,bread,cookie",
+    "Refrigerate_min": 3,
+    "Refrigerate_max": 4,
+    "refrigerate_metric": "Days",
+    "refrigerate": 1
+  },
+  {
+    "name": "Egg substitutes",
+    "Keywords": "Egg substitutes,egg,substitute,Egg substitute",
+    "Refrigerate_min": 3,
+    "Refrigerate_max": 4,
+    "refrigerate_metric": "Days",
+    "refrigerate": 1
+  },
+  {
+    "name": "Fish",
+    "Name_subtitle": "raw but headed and gutted",
+    "Keywords": "Fish,raw,headed,gutted",
+    "Refrigerate_min": 3,
+    "Refrigerate_max": 4,
+    "refrigerate_metric": "Days",
+    "refrigerate": 1
+  },
+  {
+    "name": "Frozen pretzels",
+    "Keywords": "Frozen pretzels,frozen,pretzels,pretzel",
+    "Refrigerate_min": 3,
+    "Refrigerate_max": 4,
+    "refrigerate_metric": "Days",
+    "refrigerate": 1
+  },
+  {
+    "name": "Lobster tails",
+    "Keywords": "Lobster tails,tail,lobster,Lobster tail",
+    "Refrigerate_min": 3,
+    "Refrigerate_max": 4,
+    "refrigerate_metric": "Days",
+    "refrigerate": 1
+  },
+  {
+    "name": "Sausages",
+    "Name_subtitle": "uncooked",
+    "Keywords": "Sausages,Sausage,uncooked,cooked",
+    "Refrigerate_min": 3,
+    "Refrigerate_max": 4,
+    "refrigerate_metric": "Days",
+    "refrigerate": 1
+  },
+  {
+    "name": "Sausages",
+    "Name_subtitle": "precooked",
+    "Keywords": "Sausages,Sausage,precooked,cooked",
+    "Refrigerate_min": 3,
+    "Refrigerate_max": 4,
+    "refrigerate_metric": "Days",
+    "refrigerate": 1
+  },
+  {
+    "name": "Shrimp, shellfish",
+    "Keywords": "Shrimp,shellfish,fish",
+    "Refrigerate_min": 3,
+    "Refrigerate_max": 4,
+    "refrigerate_metric": "Days",
+    "refrigerate": 1
+  },
+  {
+    "name": "Soy crumbles and hot dogs",
+    "Keywords": "Soy crumbles,hot dogs,hot dog,soy,soy crumble",
+    "Refrigerate_min": 3,
+    "Refrigerate_max": 4,
+    "refrigerate_metric": "Days",
+    "refrigerate": 1
+  },
+  {
+    "name": "Soy meat substitutes",
+    "Keywords": "Soy meat substitutes,soy,meat,soy meat,meat substitutes,substitutes,substitute",
+    "Refrigerate_min": 3,
+    "Refrigerate_max": 4,
+    "refrigerate_metric": "Days",
+    "refrigerate": 1
+  },
+  {
+    "name": "Tempeh",
+    "Keywords": "Tempeh",
+    "Refrigerate_min": 3,
+    "Refrigerate_max": 4,
+    "refrigerate_metric": "Days",
+    "refrigerate": 1
+  },
+  {
+    "name": "Vegetables",
+    "Keywords": "Vegetables,vegetable",
+    "Refrigerate_min": 3,
+    "Refrigerate_max": 4,
+    "refrigerate_metric": "Days",
+    "refrigerate": 1
+  },
+  {
+    "name": "Fresh pasta",
+    "Keywords": "Fresh pasta,pasta",
+    "Refrigerate_min": 1,
+    "Refrigerate_max": 2,
+    "refrigerate_metric": "Days",
+    "refrigerate": 1
+  },
+  {
     "name": "Beans",
     "Name_subtitle": "dried",
     "Keywords": "Beans,dried",
-    "pantry_after_opening": 1,
+    "pantry_after_opening_min": 1,
     "pantry_after_opening_max": 1,
     "pantry_after_opening_metric": "Years",
     "pantry": 1,
@@ -2323,7 +2607,7 @@
     "name": "Lentils",
     "Name_subtitle": "dried",
     "Keywords": "Lentils,dried",
-    "pantry_after_opening": 1,
+    "pantry_after_opening_min": 1,
     "pantry_after_opening_max": 1,
     "pantry_after_opening_metric": "Years",
     "pantry": 1,
@@ -2333,7 +2617,7 @@
     "name": "Pasta",
     "Name_subtitle": "dry, without eggs",
     "Keywords": "Pasta,dry,eggs,egg,without egg,without eggs",
-    "pantry_after_opening": 1,
+    "pantry_after_opening_min": 1,
     "pantry_after_opening_max": 1,
     "pantry_after_opening_metric": "Years",
     "pantry": 1,
@@ -2342,7 +2626,7 @@
   {
     "name": "Dry egg noodles",
     "Keywords": "Dry egg noodles,egg noodles,egg,noodles,noodle,dry",
-    "pantry_after_opening": 1,
+    "pantry_after_opening_min": 1,
     "pantry_after_opening_max": 2,
     "pantry_after_opening_metric": "Months",
     "pantry": 1,
@@ -2352,7 +2636,7 @@
     "name": "Peas",
     "Name_subtitle": "dried split",
     "Keywords": "Peas,Pea,dried split,split",
-    "pantry_after_opening": 1,
+    "pantry_after_opening_min": 1,
     "pantry_after_opening_max": 1,
     "pantry_after_opening_metric": "Years",
     "pantry": 1,
@@ -2362,12 +2646,12 @@
     "name": "Rice",
     "Name_subtitle": "white or wild",
     "Keywords": "Rice,white,wild",
-    "pantry_after_opening": 1,
+    "pantry_after_opening_min": 1,
     "pantry_after_opening_max": 1,
     "pantry_after_opening_metric": "Years",
     "pantry": 1,
     "pantryOpen": 1,
-    "refrigerate_after_opening": 6,
+    "refrigerate_after_opening_min": 6,
     "refrigerate_after_opening_max": 6,
     "refrigerate_after_opening_metric": "Months",
     "refrigerate": 1,
@@ -2377,12 +2661,12 @@
     "name": "Rice",
     "Name_subtitle": "brown",
     "Keywords": "Rice,brown",
-    "pantry_after_opening": 1,
+    "pantry_after_opening_min": 1,
     "pantry_after_opening_max": 1,
     "pantry_after_opening_metric": "Years",
     "pantry": 1,
     "pantryOpen": 1,
-    "refrigerate_after_opening": 6,
+    "refrigerate_after_opening_min": 6,
     "refrigerate_after_opening_max": 6,
     "refrigerate_after_opening_metric": "Months",
     "refrigerate": 1,
@@ -2392,7 +2676,7 @@
     "name": "Barbecue sauce",
     "Name_subtitle": "bottled",
     "Keywords": "Barbecue sauce,sauce,bottled,Barbecue",
-    "refrigerate_after_opening": 4,
+    "refrigerate_after_opening_min": 4,
     "refrigerate_after_opening_max": 4,
     "refrigerate_after_opening_metric": "Months",
     "refrigerate": 1,
@@ -2401,17 +2685,25 @@
   {
     "name": "Chutney",
     "Keywords": "Chutney",
-    "refrigerate_after_opening": 1,
+    "refrigerate_after_opening_min": 1,
     "refrigerate_after_opening_max": 2,
     "refrigerate_after_opening_metric": "Months",
     "refrigerate": 1,
     "refrigerateOpen": 1
   },
   {
+    "name": "Dry gravy mixes",
+    "Keywords": "Dry gravy mixes,gravy,mixes,mix,dry",
+    "Refrigerate_min": 1,
+    "Refrigerate_max": 2,
+    "refrigerate_metric": "Days",
+    "refrigerate": 1
+  },
+  {
     "name": "Gravy",
     "Name_subtitle": "jars and cans",
     "Keywords": "Gravy,jars,cans,jar,can",
-    "refrigerate_after_opening": 1,
+    "refrigerate_after_opening_min": 1,
     "refrigerate_after_opening_max": 2,
     "refrigerate_after_opening_metric": "Days",
     "refrigerate": 1,
@@ -2425,7 +2717,7 @@
     "DOP_Refrigerate_Max": 12,
     "DOP_Refrigerate_Metric": "Months",
     "refrigerate": 1,
-    "refrigerate_after_opening": 3,
+    "refrigerate_after_opening_min": 3,
     "refrigerate_after_opening_max": 4,
     "refrigerate_after_opening_metric": "Months",
     "refrigerateOpen": 1
@@ -2433,7 +2725,7 @@
   {
     "name": "Jams, jellies, and preserves",
     "Keywords": "Jams,jellies,preserves,jam,jelly,preserve",
-    "refrigerate_after_opening": 6,
+    "refrigerate_after_opening_min": 6,
     "refrigerate_after_opening_max": 12,
     "refrigerate_after_opening_metric": "Months",
     "refrigerate": 1,
@@ -2442,7 +2734,7 @@
   {
     "name": "Ketchup, cocktail, or chili sauce",
     "Keywords": "Ketchup,cocktail,chili sauce,sauce,chili",
-    "refrigerate_after_opening": 6,
+    "refrigerate_after_opening_min": 6,
     "refrigerate_after_opening_max": 6,
     "refrigerate_after_opening_metric": "Months",
     "refrigerate": 1,
@@ -2451,7 +2743,7 @@
   {
     "name": "Marinades",
     "Keywords": "Marinades,marinade",
-    "refrigerate_after_opening": 6,
+    "refrigerate_after_opening_min": 6,
     "refrigerate_after_opening_max": 6,
     "refrigerate_after_opening_metric": "Months",
     "refrigerate": 1,
@@ -2461,7 +2753,7 @@
     "name": "Mayonnaise",
     "Name_subtitle": "commercial",
     "Keywords": "Mayonnaise,commercial",
-    "refrigerate_after_opening": 2,
+    "refrigerate_after_opening_min": 2,
     "refrigerate_after_opening_max": 2,
     "refrigerate_after_opening_metric": "Months",
     "refrigerate": 1,
@@ -2470,7 +2762,7 @@
   {
     "name": "Mustard",
     "Keywords": "Mustard",
-    "refrigerate_after_opening": 1,
+    "refrigerate_after_opening_min": 1,
     "refrigerate_after_opening_max": 1,
     "refrigerate_after_opening_metric": "Years",
     "refrigerate": 1,
@@ -2480,7 +2772,7 @@
     "name": "Olives",
     "Name_subtitle": "black and green",
     "Keywords": "Olives,black,green,olive",
-    "refrigerate_after_opening": 2,
+    "refrigerate_after_opening_min": 2,
     "refrigerate_after_opening_max": 2,
     "refrigerate_after_opening_metric": "Weeks",
     "refrigerate": 1,
@@ -2489,7 +2781,7 @@
   {
     "name": "Pickles",
     "Keywords": "Pickles,pickle",
-    "refrigerate_after_opening": 1,
+    "refrigerate_after_opening_min": 1,
     "refrigerate_after_opening_max": 3,
     "refrigerate_after_opening_metric": "Months",
     "refrigerate": 1,
@@ -2503,7 +2795,7 @@
     "DOP_Refrigerate_Max": 6,
     "DOP_Refrigerate_Metric": "Months",
     "refrigerate": 1,
-    "refrigerate_after_opening": 3,
+    "refrigerate_after_opening_min": 3,
     "refrigerate_after_opening_max": 3,
     "refrigerate_after_opening_metric": "Days",
     "refrigerateOpen": 1
@@ -2512,7 +2804,7 @@
     "name": "Salad dressings",
     "Name_subtitle": "commercial, bottled",
     "Keywords": "Salad dressings,dressings,dressing,commercial,bottled,bottle,salad",
-    "refrigerate_after_opening": 1,
+    "refrigerate_after_opening_min": 1,
     "refrigerate_after_opening_max": 3,
     "refrigerate_after_opening_metric": "Months",
     "refrigerate": 1,
@@ -2522,7 +2814,7 @@
     "name": "Salsa",
     "Name_subtitle": "picante and taco sauces",
     "Keywords": "Salsa,picante,taco sauces,taco,sauces,sauce",
-    "refrigerate_after_opening": 1,
+    "refrigerate_after_opening_min": 1,
     "refrigerate_after_opening_max": 1,
     "refrigerate_after_opening_metric": "Months",
     "refrigerate": 1,
@@ -2532,7 +2824,7 @@
     "name": "Spaghetti sauce",
     "Name_subtitle": "in jars",
     "Keywords": "Spaghetti sauce,sauce,in jars,jars,jar,spaghetti",
-    "refrigerate_after_opening": 4,
+    "refrigerate_after_opening_min": 4,
     "refrigerate_after_opening_max": 4,
     "refrigerate_after_opening_metric": "Days",
     "refrigerate": 1,
@@ -2541,7 +2833,7 @@
   {
     "name": "Soy sauce or teriyaki sauce",
     "Keywords": "Soy sauce,teriyaki sauce,sauce,soy,teriyaki",
-    "refrigerate_after_opening": 1,
+    "refrigerate_after_opening_min": 1,
     "refrigerate_after_opening_max": 1,
     "refrigerate_after_opening_metric": "Months",
     "refrigerate": 1,
@@ -2550,7 +2842,7 @@
   {
     "name": "Jars or pouches",
     "Keywords": "Jars,pouches,jar,pouch",
-    "refrigerate_after_opening": 2,
+    "refrigerate_after_opening_min": 2,
     "refrigerate_after_opening_max": 3,
     "refrigerate_after_opening_metric": "Days",
     "refrigerate": 1,
@@ -2559,7 +2851,7 @@
   {
     "name": "Fruit",
     "Keywords": "Fruit",
-    "refrigerate_after_opening": 3,
+    "refrigerate_after_opening_min": 3,
     "refrigerate_after_opening_max": 3,
     "refrigerate_after_opening_metric": "Days",
     "refrigerate": 1,
@@ -2568,7 +2860,7 @@
   {
     "name": "Vegetables",
     "Keywords": "Vegetables,vegetable",
-    "refrigerate_after_opening": 2,
+    "refrigerate_after_opening_min": 2,
     "refrigerate_after_opening_max": 2,
     "refrigerate_after_opening_metric": "Days",
     "refrigerate": 1,
@@ -2577,7 +2869,7 @@
   {
     "name": "Dinners",
     "Keywords": "Dinners,dinner",
-    "refrigerate_after_opening": 2,
+    "refrigerate_after_opening_min": 2,
     "refrigerate_after_opening_max": 2,
     "refrigerate_after_opening_metric": "Days",
     "refrigerate": 1,
@@ -2586,7 +2878,7 @@
   {
     "name": "Cereal, dry mixes",
     "Keywords": "Cereal,dry mixes,mixes,mix,dry",
-    "pantry_after_opening": 1,
+    "pantry_after_opening_min": 1,
     "pantry_after_opening_max": 1,
     "pantry_after_opening_metric": "Months",
     "pantry": 1,
@@ -2596,12 +2888,9 @@
     "name": "Formula",
     "Name_subtitle": "prepared",
     "Keywords": "Formula,prepared,prepare",
-    "pantry_after_opening": 1,
+    "pantry_after_opening_min": 1,
     "pantry_after_opening_max": 1,
-    "pantry_after_opening_metric": "Hours",
-    "pantry": 1,
-    "pantryOpen": 1,
-    "refrigerate_after_opening": 1,
+    "refrigerate_after_opening_min": 1,
     "refrigerate_after_opening_max": 1,
     "refrigerate_after_opening_metric": "Days",
     "refrigerate": 1,
@@ -2610,7 +2899,7 @@
   {
     "name": "Liquid concentrate or ready-to-feed formula",
     "Keywords": "Liquid concentrate,ready to feed formula,concentrate,liquid,formula,feed,ready to feed,feed formula",
-    "refrigerate_after_opening": 2,
+    "refrigerate_after_opening_min": 2,
     "refrigerate_after_opening_max": 2,
     "refrigerate_after_opening_metric": "Days",
     "refrigerate": 1,
@@ -2620,20 +2909,9 @@
     "name": "Applesauce",
     "Name_subtitle": "commercial",
     "Keywords": "Applesauce,Apple,sauce,commercial",
-    "pantry_after_opening_metric": "Not Recommended",
-    "pantry": 1,
-    "pantryOpen": 1,
-    "refrigerate_after_opening": 7,
+    "refrigerate_after_opening_min": 7,
     "refrigerate_after_opening_max": 10,
     "refrigerate_after_opening_metric": "Days",
-    "refrigerate": 1,
-    "refrigerateOpen": 1
-  },
-  {
-    "name": "Bacon bits",
-    "Name_subtitle": "imitation",
-    "Keywords": "Bacon bits,bits,imitation,bacon,bit",
-    "refrigerate_after_opening_metric": "Package use-by date",
     "refrigerate": 1,
     "refrigerateOpen": 1
   },
@@ -2641,10 +2919,7 @@
     "name": "Canned goods",
     "Name_subtitle": "low acid (such as meat, poultry, fish, gravy, stew, soups, beans, carrots, corn, pasta, peas, potatoes, spinach)",
     "Keywords": "Canned goods,canned,can,goods,low acid,low,meat,poultry,fish,gravy,stew,soups,soup,beans,bean,carrots,carrot,corn,pasta,peas,pea,potatoes,potato,spinach",
-    "pantry_after_opening_metric": "Not Recommended",
-    "pantry": 1,
-    "pantryOpen": 1,
-    "refrigerate_after_opening": 3,
+    "refrigerate_after_opening_min": 3,
     "refrigerate_after_opening_max": 4,
     "refrigerate_after_opening_metric": "Days",
     "refrigerate": 1,
@@ -2654,10 +2929,7 @@
     "name": "Canned goods",
     "Name_subtitle": "high acid (such as juices, fruit, pickles, sauerkraut, tomato soup, and foods in vinegar-based sauce)",
     "Keywords": "Canned goods,canned,can,goods,high acid,high,juices,juice,fruit,fruits,pickles,pickle,sauerkraut,tomato soup,soup,tomato,foods in vinegar based sauce,sauce,foods,food,vinegar based,vinegar",
-    "pantry_after_opening_metric": "Not Recommended",
-    "pantry": 1,
-    "pantryOpen": 1,
-    "refrigerate_after_opening": 5,
+    "refrigerate_after_opening_min": 5,
     "refrigerate_after_opening_max": 7,
     "refrigerate_after_opening_metric": "Days",
     "refrigerate": 1,
@@ -2667,7 +2939,7 @@
     "name": "Cereal",
     "Name_subtitle": "ready-to-eat",
     "Keywords": "Cereal,ready,eat",
-    "pantry_after_opening": 2,
+    "pantry_after_opening_min": 2,
     "pantry_after_opening_max": 3,
     "pantry_after_opening_metric": "Months",
     "pantry": 1,
@@ -2677,7 +2949,7 @@
     "name": "Cereal",
     "Name_subtitle": "cook before eating (oatmeal, etc.)",
     "Keywords": "Cereal,cook before eating,oatmeal,oats,oat,meal",
-    "pantry_after_opening": 6,
+    "pantry_after_opening_min": 6,
     "pantry_after_opening_max": 12,
     "pantry_after_opening_metric": "Months",
     "pantry": 1,
@@ -2686,10 +2958,7 @@
   {
     "name": "Chocolate syrup",
     "Keywords": "Chocolate syrup,Chocolate,syrup",
-    "pantry_after_opening_metric": "Not Recommended",
-    "pantry": 1,
-    "pantryOpen": 1,
-    "refrigerate_after_opening": 6,
+    "refrigerate_after_opening_min": 6,
     "refrigerate_after_opening_max": 6,
     "refrigerate_after_opening_metric": "Months",
     "refrigerate": 1,
@@ -2698,12 +2967,12 @@
   {
     "name": "Crackers",
     "Keywords": "Crackers,cracker",
-    "pantry_after_opening": 1,
+    "pantry_after_opening_min": 1,
     "pantry_after_opening_max": 1,
     "pantry_after_opening_metric": "Months",
     "pantry": 1,
     "pantryOpen": 1,
-    "refrigerate_after_opening": 3,
+    "refrigerate_after_opening_min": 3,
     "refrigerate_after_opening_max": 4,
     "refrigerate_after_opening_metric": "Months",
     "refrigerate": 1,
@@ -2713,12 +2982,12 @@
     "name": "Fruits, dried",
     "Name_subtitle": "raisins, apricots, mangoes, cranberries, etc.",
     "Keywords": "Fruits,fruit,dried,raisins,raisin,apricots,apricot,mangoes,mangoe,cranberries,cranberry",
-    "pantry_after_opening": 1,
+    "pantry_after_opening_min": 1,
     "pantry_after_opening_max": 1,
     "pantry_after_opening_metric": "Months",
     "pantry": 1,
     "pantryOpen": 1,
-    "refrigerate_after_opening": 6,
+    "refrigerate_after_opening_min": 6,
     "refrigerate_after_opening_max": 6,
     "refrigerate_after_opening_metric": "Months",
     "refrigerate": 1,
@@ -2727,7 +2996,7 @@
   {
     "name": "Marshmallows",
     "Keywords": "Marshmallows,Marshmallow",
-    "pantry_after_opening": 1,
+    "pantry_after_opening_min": 1,
     "pantry_after_opening_max": 1,
     "pantry_after_opening_metric": "Months",
     "pantry": 1,
@@ -2736,7 +3005,7 @@
   {
     "name": "Marshmallow crème",
     "Keywords": "Marshmallow crème,Marshmallow,crème",
-    "pantry_after_opening": 1,
+    "pantry_after_opening_min": 1,
     "pantry_after_opening_max": 1,
     "pantry_after_opening_metric": "Months",
     "pantry": 1,
@@ -2746,7 +3015,7 @@
     "name": "Milk",
     "Name_subtitle": "canned evaporated or condensed",
     "Keywords": "Milk,can,canned,evaporated,condensed,evaporate,condense",
-    "refrigerate_after_opening": 4,
+    "refrigerate_after_opening_min": 4,
     "refrigerate_after_opening_max": 5,
     "refrigerate_after_opening_metric": "Days",
     "refrigerate": 1,
@@ -2755,7 +3024,7 @@
   {
     "name": "Molasses",
     "Keywords": "Molasses",
-    "pantry_after_opening": 6,
+    "pantry_after_opening_min": 6,
     "pantry_after_opening_max": 6,
     "pantry_after_opening_metric": "Months",
     "pantry": 1,
@@ -2765,7 +3034,7 @@
     "name": "Mushrooms",
     "Name_subtitle": "dried",
     "Keywords": "Mushrooms,Mushroom,dried",
-    "pantry_after_opening": 3,
+    "pantry_after_opening_min": 3,
     "pantry_after_opening_max": 3,
     "pantry_after_opening_metric": "Months",
     "pantry": 1,
@@ -2775,12 +3044,12 @@
     "name": "Nuts",
     "Name_subtitle": "jars or cans",
     "Keywords": "Nuts,nut,jar,jars,cans,can",
-    "pantry_after_opening": 2,
+    "pantry_after_opening_min": 2,
     "pantry_after_opening_max": 9,
     "pantry_after_opening_metric": "Months",
     "pantry": 1,
     "pantryOpen": 1,
-    "refrigerate_after_opening": 4,
+    "refrigerate_after_opening_min": 4,
     "refrigerate_after_opening_max": 6,
     "refrigerate_after_opening_metric": "Months",
     "refrigerate": 1,
@@ -2790,7 +3059,7 @@
     "name": "Peanut butter",
     "Name_subtitle": "commercial",
     "Keywords": "Peanut butter,butter,commercial,peanut",
-    "pantry_after_opening": 2,
+    "pantry_after_opening_min": 2,
     "pantry_after_opening_max": 3,
     "pantry_after_opening_metric": "Months",
     "pantry": 1,
@@ -2799,18 +3068,17 @@
   {
     "name": "Pectin",
     "Keywords": "Pectin",
-    "pantry_metric": "Package use-by date",
-    "pantry": 1,
-    "pantry_after_opening": 1,
+    "pantry_after_opening_min": 1,
     "pantry_after_opening_max": 1,
     "pantry_after_opening_metric": "Months",
+    "pantry": 1,
     "pantryOpen": 1
   },
   {
     "name": "Popcorn",
     "Name_subtitle": "dry kernels in jar",
     "Keywords": "Popcorn,dry kernels in jar,jar,dry kernels,kernels,in jar,kernel,chips,chip",
-    "pantry_after_opening": 1,
+    "pantry_after_opening_min": 1,
     "pantry_after_opening_max": 1,
     "pantry_after_opening_metric": "Years",
     "pantry": 1,
@@ -2820,7 +3088,7 @@
     "name": "Popcorn",
     "Name_subtitle": "commercially popped in bags",
     "Keywords": "Popcorn,commercially,popped in bags,bags,bag,in bags",
-    "pantry_after_opening": 1,
+    "pantry_after_opening_min": 1,
     "pantry_after_opening_max": 2,
     "pantry_after_opening_metric": "Weeks",
     "pantry": 1,
@@ -2830,7 +3098,7 @@
     "name": "Popcorn",
     "Name_subtitle": "microwave packets",
     "Keywords": "Popcorn,microwave packets,packets,microwave,packet",
-    "pantry_after_opening": 1,
+    "pantry_after_opening_min": 1,
     "pantry_after_opening_max": 2,
     "pantry_after_opening_metric": "Days",
     "pantry": 1,
@@ -2839,18 +3107,17 @@
   {
     "name": "Potato chips",
     "Keywords": "Potato chips,potato,chips,chip,potatoes",
-    "pantry_metric": "Package use-by date",
-    "pantry": 1,
-    "pantry_after_opening": 1,
+    "pantry_after_opening_min": 1,
     "pantry_after_opening_max": 2,
     "pantry_after_opening_metric": "Weeks",
+    "pantry": 1,
     "pantryOpen": 1
   },
   {
     "name": "Potatoes",
     "Name_subtitle": "instant",
     "Keywords": "Potatoes,Potato,instant",
-    "pantry_after_opening": 6,
+    "pantry_after_opening_min": 6,
     "pantry_after_opening_max": 12,
     "pantry_after_opening_metric": "Months",
     "pantry": 1,
@@ -2859,7 +3126,7 @@
   {
     "name": "Pretzels",
     "Keywords": "Pretzels,Pretzel",
-    "pantry_after_opening": 3,
+    "pantry_after_opening_min": 3,
     "pantry_after_opening_max": 3,
     "pantry_after_opening_metric": "Weeks",
     "pantry": 1,
@@ -2868,7 +3135,7 @@
   {
     "name": "Pudding mixes",
     "Keywords": "Pudding mixes,Pudding,mixes,mix",
-    "pantry_after_opening": 3,
+    "pantry_after_opening_min": 3,
     "pantry_after_opening_max": 4,
     "pantry_after_opening_metric": "Months",
     "pantry": 1,
@@ -2878,7 +3145,7 @@
     "name": "Soup mixes",
     "Name_subtitle": "dry bouillon",
     "Keywords": "Soup mixes,mixes,mix,soup,dry bouillon,bouillon",
-    "pantry_after_opening": 1,
+    "pantry_after_opening_min": 1,
     "pantry_after_opening_max": 1,
     "pantry_after_opening_metric": "Years",
     "pantry": 1,
@@ -2888,12 +3155,12 @@
     "name": "Sun dried tomatoes",
     "Name_subtitle": "jar",
     "Keywords": "Sun dried tomatoes,dried tomatoes,sun,sun dried,dried,tomatoes,tomato",
-    "pantry_after_opening": 3,
+    "pantry_after_opening_min": 3,
     "pantry_after_opening_max": 6,
     "pantry_after_opening_metric": "Months",
     "pantry": 1,
     "pantryOpen": 1,
-    "refrigerate_after_opening": 3,
+    "refrigerate_after_opening_min": 3,
     "refrigerate_after_opening_max": 6,
     "refrigerate_after_opening_metric": "Months",
     "refrigerate": 1,
@@ -2902,7 +3169,7 @@
   {
     "name": "Syrup",
     "Keywords": "Syrup",
-    "refrigerate_after_opening": 6,
+    "refrigerate_after_opening_min": 6,
     "refrigerate_after_opening_max": 6,
     "refrigerate_after_opening_metric": "Months",
     "refrigerate": 1,
@@ -2911,7 +3178,7 @@
   {
     "name": "Toaster pastries",
     "Keywords": "Toaster pastries,pastry,Toaster,pastries",
-    "pantry_after_opening": 1,
+    "pantry_after_opening_min": 1,
     "pantry_after_opening_max": 2,
     "pantry_after_opening_metric": "Weeks",
     "pantry": 1,
@@ -2921,12 +3188,12 @@
     "name": "Coffee",
     "Name_subtitle": "whole beans",
     "Keywords": "Coffee,whole beans,beans,whole,bean",
-    "pantry_after_opening": 3,
+    "pantry_after_opening_min": 3,
     "pantry_after_opening_max": 5,
     "pantry_after_opening_metric": "Months",
     "pantry": 1,
     "pantryOpen": 1,
-    "refrigerate_after_opening": 3,
+    "refrigerate_after_opening_min": 3,
     "refrigerate_after_opening_max": 4,
     "refrigerate_after_opening_metric": "Months",
     "refrigerate": 1,
@@ -2936,7 +3203,7 @@
     "name": "Coffee",
     "Name_subtitle": "home ground, non-vacuum",
     "Keywords": "Coffee,home ground,non vacuum,ground,home,vacuum",
-    "pantry_after_opening": 3,
+    "pantry_after_opening_min": 3,
     "pantry_after_opening_max": 5,
     "pantry_after_opening_metric": "Weeks",
     "pantry": 1,
@@ -2946,7 +3213,7 @@
     "name": "Coffee",
     "Name_subtitle": "instant",
     "Keywords": "Coffee,instant",
-    "pantry_after_opening": 2,
+    "pantry_after_opening_min": 2,
     "pantry_after_opening_max": 3,
     "pantry_after_opening_metric": "Months",
     "pantry": 1,
@@ -2955,7 +3222,7 @@
   {
     "name": "Diet powder mixes and drink mixes",
     "Keywords": "Diet powder mixes,drink mixes,mixes,drink,powder mixes,diet powder,mix",
-    "pantry_after_opening": 1,
+    "pantry_after_opening_min": 1,
     "pantry_after_opening_max": 3,
     "pantry_after_opening_metric": "Months",
     "pantry": 1,
@@ -2964,12 +3231,12 @@
   {
     "name": "Fruit Juice in cartons, fruit drinks, punch",
     "Keywords": "Fruit Juice in cartons,fruit drinks,punch,fruit,fruit juice,juice in cartons,cartons,carton,drinks,drink",
-    "pantry_after_opening": 7,
+    "pantry_after_opening_min": 7,
     "pantry_after_opening_max": 12,
     "pantry_after_opening_metric": "Days",
     "pantry": 1,
     "pantryOpen": 1,
-    "refrigerate_after_opening": 8,
+    "refrigerate_after_opening_min": 8,
     "refrigerate_after_opening_max": 12,
     "refrigerate_after_opening_metric": "Days",
     "refrigerate": 1,
@@ -2978,9 +3245,7 @@
   {
     "name": "Juice, boxes",
     "Keywords": "Juice, boxes,box",
-    "pantry_metric": "Package use-by date",
-    "pantry": 1,
-    "refrigerate_after_opening": 8,
+    "refrigerate_after_opening_min": 8,
     "refrigerate_after_opening_max": 12,
     "refrigerate_after_opening_metric": "Days",
     "refrigerate": 1,
@@ -2990,7 +3255,7 @@
     "name": "Soda",
     "Name_subtitle": "carbonated cola drinks, mixers, diet sodas; bottles or cans",
     "Keywords": "Soda,carbonated cola drinks,mixers,diet sodas,bottles,cans,cola drinks,drinks,drink,cola,carbonated,carbonated cola,mixer,diet,sodas,bottle,can",
-    "refrigerate_after_opening": 2,
+    "refrigerate_after_opening_min": 2,
     "refrigerate_after_opening_max": 3,
     "refrigerate_after_opening_metric": "Days",
     "refrigerate": 1,
@@ -2999,7 +3264,7 @@
   {
     "name": "Soy or rice beverage",
     "Keywords": "Soy,rice beverage,rice,beverage",
-    "refrigerate_after_opening": 7,
+    "refrigerate_after_opening_min": 7,
     "refrigerate_after_opening_max": 10,
     "refrigerate_after_opening_metric": "Days",
     "refrigerate": 1,
@@ -3009,7 +3274,7 @@
     "name": "Tea",
     "Name_subtitle": "bags",
     "Keywords": "Tea,bags,bag",
-    "pantry_after_opening": 6,
+    "pantry_after_opening_min": 6,
     "pantry_after_opening_max": 12,
     "pantry_after_opening_metric": "Months",
     "pantry": 1,
@@ -3019,7 +3284,7 @@
     "name": "Tea",
     "Name_subtitle": "instant",
     "Keywords": "Tea,instant",
-    "pantry_after_opening": 6,
+    "pantry_after_opening_min": 6,
     "pantry_after_opening_max": 12,
     "pantry_after_opening_metric": "Months",
     "pantry": 1,
@@ -3029,48 +3294,95 @@
     "name": "Tea",
     "Name_subtitle": "loose",
     "Keywords": "Tea,loose",
-    "pantry_after_opening": 6,
+    "pantry_after_opening_min": 6,
     "pantry_after_opening_max": 12,
     "pantry_after_opening_metric": "Months",
     "pantry": 1,
     "pantryOpen": 1
   },
   {
-    "name": "Water",
-    "Name_subtitle": "commercially bottled",
-    "Keywords": "Water,commercially bottled,bottled,commercially,bottle,commercial",
-    "pantry_metric": "Indefinitely",
-    "pantry": 1
-  },
-  {
     "name": "Kumquats",
     "Keywords": "Kumquats",
-    "pantry_metric": "When Ripe",
-    "pantry": 1
+    "Refrigerate_min": 3,
+    "Refrigerate_max": 3,
+    "refrigerate_metric": "Weeks",
+    "refrigerate": 1
   },
   {
     "name": "Bagged greens",
     "Name_subtitle": "leaf, spinach, lettuce, etc.",
     "Keywords": "Bagged greens,leaf,spinach,lettuce,bagged,greens,green",
-    "refrigerate_after_opening": 2,
+    "Refrigerate_min": 3,
+    "Refrigerate_max": 5,
+    "refrigerate_metric": "Days",
+    "refrigerate": 1,
+    "refrigerate_after_opening_min": 2,
     "refrigerate_after_opening_max": 2,
     "refrigerate_after_opening_metric": "Days",
-    "refrigerate": 1,
     "refrigerateOpen": 1
   },
   {
     "name": "Tahini",
     "Keywords": "Tahini",
-    "refrigerate_after_opening": 3,
+    "refrigerate_after_opening_min": 3,
     "refrigerate_after_opening_max": 3,
     "refrigerate_after_opening_metric": "Weeks",
     "refrigerate": 1,
     "refrigerateOpen": 1
   },
   {
+    "name": "Egg salad",
+    "Keywords": "Egg salad,egg,salad",
+    "Refrigerate_min": 3,
+    "Refrigerate_max": 4,
+    "refrigerate_metric": "Days",
+    "refrigerate": 1
+  },
+  {
+    "name": "Potato salad",
+    "Keywords": "Potato salad,potato,salad",
+    "Refrigerate_min": 3,
+    "Refrigerate_max": 5,
+    "refrigerate_metric": "Days",
+    "refrigerate": 1
+  },
+  {
+    "name": "Seafood salads",
+    "Name_subtitle": "(tuna salad, shrimp salad, salmon salad, mixed seafood salad, etc.)",
+    "Keywords": "Seafood salads,tuna salad, shrimp salad, salmon salad, mixed seafood salad,seafood,salads,salad,tuna,shrimp,salmon,mixed,mixed seafood,seafood salad,",
+    "Refrigerate_min": 3,
+    "Refrigerate_max": 4,
+    "refrigerate_metric": "Days",
+    "refrigerate": 1
+  },
+  {
+    "name": "Chicken salad",
+    "Keywords": "Chicken salad,chicken,salad",
+    "Refrigerate_min": 3,
+    "Refrigerate_max": 4,
+    "refrigerate_metric": "Days",
+    "refrigerate": 1
+  },
+  {
+    "name": "Ham salad",
+    "Keywords": "Ham salad,ham,salad",
+    "Refrigerate_min": 3,
+    "Refrigerate_max": 4,
+    "refrigerate_metric": "Days",
+    "refrigerate": 1
+  },
+  {
+    "name": "Pasta salad",
+    "Keywords": "Pasta salad,pasta,salad",
+    "Refrigerate_min": 3,
+    "Refrigerate_max": 5,
+    "refrigerate_metric": "Days",
+    "refrigerate": 1
+  },
+  {
     "name": "Soy milk",
     "Keywords": "Soy milk,soy,milk",
-    "refrigerate_after_opening": 7,
+    "refrigerate_after_opening_min": 7,
     "refrigerate_after_opening_max": 10,
     "refrigerate_after_opening_metric": "Days",
     "refrigerate": 1,
@@ -3085,9 +3397,18 @@
     "refrigerate": 1
   },
   {
+    "name": "Quinoa",
+    "Name_subtitle": "cooked",
+    "Keywords": "Quinoa,cook,cooked",
+    "Refrigerate_min": 6,
+    "Refrigerate_max": 7,
+    "refrigerate_metric": "Days",
+    "refrigerate": 1
+  },
+  {
     "name": "Almond milk",
     "Keywords": "Almond milk,milk,almond",
-    "refrigerate_after_opening": 7,
+    "refrigerate_after_opening_min": 7,
     "refrigerate_after_opening_max": 10,
     "refrigerate_after_opening_metric": "Days",
     "refrigerate": 1,
@@ -3096,7 +3417,7 @@
   {
     "name": "Rice milk",
     "Keywords": "Rice milk,rice,milk",
-    "refrigerate_after_opening": 7,
+    "refrigerate_after_opening_min": 7,
     "refrigerate_after_opening_max": 10,
     "refrigerate_after_opening_metric": "Days",
     "refrigerate": 1,
@@ -3105,7 +3426,7 @@
   {
     "name": "Coconut milk",
     "Keywords": "Coconut milk,coconut,milk",
-    "refrigerate_after_opening": 7,
+    "refrigerate_after_opening_min": 7,
     "refrigerate_after_opening_max": 10,
     "refrigerate_after_opening_metric": "Days",
     "refrigerate": 1,
@@ -3115,7 +3436,7 @@
     "name": "Coffee creamer",
     "Name_subtitle": "powdered",
     "Keywords": "Coffee creamer,creamer,cream,coffee,powdered,powder",
-    "pantry_after_opening": 2,
+    "pantry_after_opening_min": 2,
     "pantry_after_opening_max": 3,
     "pantry_after_opening_metric": "Months",
     "pantry": 1,
@@ -3128,7 +3449,7 @@
     "DOP_Refrigerate_Max": 2,
     "DOP_Refrigerate_Metric": "Weeks",
     "refrigerate": 1,
-    "refrigerate_after_opening": 7,
+    "refrigerate_after_opening_min": 7,
     "refrigerate_after_opening_max": 7,
     "refrigerate_after_opening_metric": "Days",
     "refrigerateOpen": 1
@@ -3144,7 +3465,7 @@
   {
     "name": "Black bean sauce",
     "Keywords": "Black bean sauce,sauce,bean,black,black bean,bean sauce",
-    "refrigerate_after_opening": 3,
+    "refrigerate_after_opening_min": 3,
     "refrigerate_after_opening_max": 6,
     "refrigerate_after_opening_metric": "Months",
     "refrigerate": 1,
@@ -3153,7 +3474,7 @@
   {
     "name": "Oyster sauce",
     "Keywords": "Oyster sauce,oyster,sauce",
-    "refrigerate_after_opening": 3,
+    "refrigerate_after_opening_min": 3,
     "refrigerate_after_opening_max": 6,
     "refrigerate_after_opening_metric": "Months",
     "refrigerate": 1,
@@ -3162,7 +3483,7 @@
   {
     "name": "Hoisin sauce",
     "Keywords": "Hoisin sauce,sauce,Hoisin",
-    "refrigerate_after_opening": 3,
+    "refrigerate_after_opening_min": 3,
     "refrigerate_after_opening_max": 6,
     "refrigerate_after_opening_metric": "Months",
     "refrigerate": 1,
@@ -3171,7 +3492,7 @@
   {
     "name": "Pork roll",
     "Keywords": "Pork roll,Pork,roll",
-    "refrigerate_after_opening": 7,
+    "refrigerate_after_opening_min": 7,
     "refrigerate_after_opening_max": 7,
     "refrigerate_after_opening_metric": "Days",
     "refrigerate": 1,
@@ -3270,7 +3591,7 @@
   {
     "name": "Lime juice",
     "Keywords": "Lime juice,lime,juice",
-    "refrigerate_after_opening": 2,
+    "refrigerate_after_opening_min": 2,
     "refrigerate_after_opening_max": 2,
     "refrigerate_after_opening_metric": "Months",
     "refrigerate": 1,
@@ -3279,7 +3600,7 @@
   {
     "name": "Lemon juice",
     "Keywords": "Lemon juice,lemon,juice",
-    "refrigerate_after_opening": 2,
+    "refrigerate_after_opening_min": 2,
     "refrigerate_after_opening_max": 2,
     "refrigerate_after_opening_metric": "Months",
     "refrigerate": 1,
@@ -3333,11 +3654,29 @@
     "name": "Orange juice",
     "Name_subtitle": "commercially packaged carton",
     "Keywords": "Orange juice,commercially packaged carton,orange,juice,commercially,packaged,carton,packaged carton,commercially packaged,commercial",
-    "refrigerate_after_opening": 7,
+    "refrigerate_after_opening_min": 7,
     "refrigerate_after_opening_max": 10,
     "refrigerate_after_opening_metric": "Days",
     "refrigerate": 1,
     "refrigerateOpen": 1
+  },
+  {
+    "name": "Orange juice",
+    "Name_subtitle": "freshly squeezed",
+    "Keywords": "Orange juice,orange,juice,freshly squeezed,squeezed,freshly,fresh,sqeeze",
+    "Refrigerate_min": 2,
+    "Refrigerate_max": 3,
+    "refrigerate_metric": "Days",
+    "refrigerate": 1
+  },
+  {
+    "name": "Roasted red peppers",
+    "Name_subtitle": "jar",
+    "Keywords": "Roasted red peppers,roasted,red,peppers,jar,Roasted red,red peppers,pepper",
+    "Refrigerate_min": 4,
+    "Refrigerate_max": 6,
+    "refrigerate_metric": "Months",
+    "refrigerate": 1
   },
   {
     "name": "Whole wheat flour",
@@ -3345,7 +3684,11 @@
     "pantry_min": 12,
     "pantry_max": 12,
     "pantry_metric": "Months",
-    "pantry": 1
+    "pantry": 1,
+    "Refrigerate_min": 2,
+    "Refrigerate_max": 2,
+    "refrigerate_metric": "Years",
+    "refrigerate": 1
   },
   {
     "name": "Whole wheat bread",
@@ -3372,7 +3715,7 @@
     "pantry_max": 5,
     "pantry_metric": "Years",
     "pantry": 1,
-    "refrigerate_after_opening": 1,
+    "refrigerate_after_opening_min": 1,
     "refrigerate_after_opening_max": 3,
     "refrigerate_after_opening_metric": "Days",
     "refrigerate": 1,
@@ -3385,7 +3728,7 @@
     "pantry_max": 2,
     "pantry_metric": "Years",
     "pantry": 1,
-    "refrigerate_after_opening": 1,
+    "refrigerate_after_opening_min": 1,
     "refrigerate_after_opening_max": 3,
     "refrigerate_after_opening_metric": "Days",
     "refrigerate": 1,
@@ -3407,7 +3750,7 @@
     "pantry_max": 5,
     "pantry_metric": "Years",
     "pantry": 1,
-    "pantry_after_opening": 3,
+    "pantry_after_opening_min": 3,
     "pantry_after_opening_max": 3,
     "pantry_after_opening_metric": "Months",
     "pantryOpen": 1
@@ -3429,17 +3772,10 @@
     "pantry": 1
   },
   {
-    "name": "Salt",
-    "Name_subtitle": "table, plain, or iodized",
-    "Keywords": "Salt,table,plain,iodized",
-    "pantry_metric": "Indefinitely",
-    "pantry": 1
-  },
-  {
     "name": "Nacho cheese ",
     "Name_subtitle": "store bought",
     "Keywords": "Nacho cheese,nacho,cheese,store bought,store",
-    "refrigerate_after_opening": 2,
+    "refrigerate_after_opening_min": 2,
     "refrigerate_after_opening_max": 2,
     "refrigerate_after_opening_metric": "Weeks",
     "refrigerate": 1,
@@ -3506,46 +3842,58 @@
     "refrigerate": 1
   },
   {
+    "name": "Broth",
+    "Name_subtitle": "homemade",
+    "Keywords": "Broth,homemade",
+    "Refrigerate_min": 3,
+    "Refrigerate_max": 4,
+    "refrigerate_metric": "Days",
+    "refrigerate": 1
+  },
+  {
     "name": "Beef broth/stock/consommé ",
     "Name_subtitle": "commercially produced",
     "Keywords": "Beef broth, beef stock,beef consommé,consommé,commercially produced",
-    "pantry_metric": "Package use-by date",
-    "pantry": 1,
-    "refrigerate_after_opening": 3,
+    "Refrigerate_min": 7,
+    "Refrigerate_max": 7,
+    "refrigerate_metric": "Days",
+    "refrigerate": 1,
+    "refrigerate_after_opening_min": 3,
     "refrigerate_after_opening_max": 4,
     "refrigerate_after_opening_metric": "Days",
-    "refrigerate": 1,
     "refrigerateOpen": 1
   },
   {
     "name": "Chicken broth/stock/consommé ",
     "Name_subtitle": "commercially produced",
     "Keywords": "Chicken broth,chicken stock,consommé,commercially produced",
-    "pantry_metric": "Package use-by date",
-    "pantry": 1,
-    "refrigerate_after_opening": 3,
+    "Refrigerate_min": 7,
+    "Refrigerate_max": 7,
+    "refrigerate_metric": "Days",
+    "refrigerate": 1,
+    "refrigerate_after_opening_min": 3,
     "refrigerate_after_opening_max": 4,
     "refrigerate_after_opening_metric": "Days",
-    "refrigerate": 1,
     "refrigerateOpen": 1
   },
   {
     "name": "Vegetable stock/broth ",
     "Name_subtitle": "commercially produced",
     "Keywords": "Vegetable stock,Vegetable broth,broth,commercial vegetable stock,commercial vegetable broth,vegetable",
-    "pantry_metric": "Package use-by date",
-    "pantry": 1,
-    "refrigerate_after_opening": 3,
+    "Refrigerate_min": 7,
+    "Refrigerate_max": 7,
+    "refrigerate_metric": "Days",
+    "refrigerate": 1,
+    "refrigerate_after_opening_min": 3,
     "refrigerate_after_opening_max": 4,
     "refrigerate_after_opening_metric": "Days",
-    "refrigerate": 1,
     "refrigerateOpen": 1
   },
   {
     "name": "Peanut butter",
     "Name_subtitle": "commercially produced, containing hydrogenated fat or other stabilizers",
     "Keywords": "Peanut butter,butter,commercial peanut butter, hydrogenated fat,fat,stabilizers,stabilizer",
-    "pantry_after_opening": 2,
+    "pantry_after_opening_min": 2,
     "pantry_after_opening_max": 3,
     "pantry_after_opening_metric": "Months",
     "pantry": 1,
@@ -3554,7 +3902,7 @@
     "DOP_Refrigerate_Max": 12,
     "DOP_Refrigerate_Metric": "Months",
     "refrigerate": 1,
-    "refrigerate_after_opening": 3,
+    "refrigerate_after_opening_min": 3,
     "refrigerate_after_opening_max": 4,
     "refrigerate_after_opening_metric": "Months",
     "refrigerateOpen": 1
@@ -3567,7 +3915,7 @@
     "DOP_Refrigerate_Max": 12,
     "DOP_Refrigerate_Metric": "Months",
     "refrigerate": 1,
-    "refrigerate_after_opening": 3,
+    "refrigerate_after_opening_min": 3,
     "refrigerate_after_opening_max": 4,
     "refrigerate_after_opening_metric": "Months",
     "refrigerateOpen": 1
@@ -3579,7 +3927,7 @@
     "DOP_Refrigerate_Max": 2,
     "DOP_Refrigerate_Metric": "Weeks",
     "refrigerate": 1,
-    "refrigerate_after_opening": 1,
+    "refrigerate_after_opening_min": 1,
     "refrigerate_after_opening_max": 1,
     "refrigerate_after_opening_metric": "Weeks",
     "refrigerateOpen": 1
@@ -3645,7 +3993,7 @@
     "name": "Peanuts ",
     "Name_subtitle": "boiled, shelled",
     "Keywords": "Peanuts,boiled, shelled,peanut",
-    "refrigerate_after_opening": 7,
+    "refrigerate_after_opening_min": 7,
     "refrigerate_after_opening_max": 7,
     "refrigerate_after_opening_metric": "Days",
     "refrigerate": 1,
@@ -3654,7 +4002,7 @@
   {
     "name": "Refried beans",
     "Keywords": "Refried beans,refried bean",
-    "refrigerate_after_opening": 2,
+    "refrigerate_after_opening_min": 2,
     "refrigerate_after_opening_max": 3,
     "refrigerate_after_opening_metric": "Days",
     "refrigerate": 1,
@@ -3671,7 +4019,7 @@
   {
     "name": "Tomato paste",
     "Keywords": "Tomato paste",
-    "refrigerate_after_opening": 5,
+    "refrigerate_after_opening_min": 5,
     "refrigerate_after_opening_max": 5,
     "refrigerate_after_opening_metric": "Days",
     "refrigerate": 1,
@@ -3708,7 +4056,11 @@
     "pantry_min": 1,
     "pantry_max": 2,
     "pantry_metric": "Weeks",
-    "pantry": 1
+    "pantry": 1,
+    "Refrigerate_min": 2,
+    "Refrigerate_max": 3,
+    "refrigerate_metric": "Weeks",
+    "refrigerate": 1
   },
   {
     "name": "Mint",
@@ -3716,7 +4068,11 @@
     "pantry_min": 1,
     "pantry_max": 2,
     "pantry_metric": "Weeks",
-    "pantry": 1
+    "pantry": 1,
+    "Refrigerate_min": 2,
+    "Refrigerate_max": 3,
+    "refrigerate_metric": "Weeks",
+    "refrigerate": 1
   },
   {
     "name": "Basil",
@@ -3734,7 +4090,11 @@
     "pantry_min": 5,
     "pantry_max": 5,
     "pantry_metric": "Days",
-    "pantry": 1
+    "pantry": 1,
+    "Refrigerate_min": 10,
+    "Refrigerate_max": 10,
+    "refrigerate_metric": "Days",
+    "refrigerate": 1
   },
   {
     "name": "Oregano",
@@ -3742,7 +4102,11 @@
     "pantry_min": 1,
     "pantry_max": 2,
     "pantry_metric": "Weeks",
-    "pantry": 1
+    "pantry": 1,
+    "Refrigerate_min": 2,
+    "Refrigerate_max": 3,
+    "refrigerate_metric": "Weeks",
+    "refrigerate": 1
   },
   {
     "name": "Rosemary",
@@ -3750,7 +4114,11 @@
     "pantry_min": 1,
     "pantry_max": 2,
     "pantry_metric": "Weeks",
-    "pantry": 1
+    "pantry": 1,
+    "Refrigerate_min": 2,
+    "Refrigerate_max": 3,
+    "refrigerate_metric": "Weeks",
+    "refrigerate": 1
   },
   {
     "name": "Chives",
@@ -3758,7 +4126,11 @@
     "pantry_min": 1,
     "pantry_max": 2,
     "pantry_metric": "Weeks",
-    "pantry": 1
+    "pantry": 1,
+    "Refrigerate_min": 2,
+    "Refrigerate_max": 3,
+    "refrigerate_metric": "Weeks",
+    "refrigerate": 1
   },
   {
     "name": "Thyme",
@@ -3766,7 +4138,11 @@
     "pantry_min": 1,
     "pantry_max": 2,
     "pantry_metric": "Weeks",
-    "pantry": 1
+    "pantry": 1,
+    "Refrigerate_min": 2,
+    "Refrigerate_max": 3,
+    "refrigerate_metric": "Weeks",
+    "refrigerate": 1
   },
   {
     "name": "Turkey ",
@@ -3776,7 +4152,7 @@
     "DOP_Refrigerate_Max": 2,
     "DOP_Refrigerate_Metric": "Weeks",
     "refrigerate": 1,
-    "refrigerate_after_opening": 3,
+    "refrigerate_after_opening_min": 3,
     "refrigerate_after_opening_max": 5,
     "refrigerate_after_opening_metric": "Days",
     "refrigerateOpen": 1
@@ -3789,7 +4165,7 @@
     "DOP_Refrigerate_Max": 2,
     "DOP_Refrigerate_Metric": "Weeks",
     "refrigerate": 1,
-    "refrigerate_after_opening": 3,
+    "refrigerate_after_opening_min": 3,
     "refrigerate_after_opening_max": 5,
     "refrigerate_after_opening_metric": "Days",
     "refrigerateOpen": 1
@@ -3802,7 +4178,7 @@
     "DOP_Refrigerate_Max": 2,
     "DOP_Refrigerate_Metric": "Weeks",
     "refrigerate": 1,
-    "refrigerate_after_opening": 3,
+    "refrigerate_after_opening_min": 3,
     "refrigerate_after_opening_max": 5,
     "refrigerate_after_opening_metric": "Days",
     "refrigerateOpen": 1
@@ -3815,19 +4191,31 @@
     "DOP_Refrigerate_Max": 2,
     "DOP_Refrigerate_Metric": "Weeks",
     "refrigerate": 1,
-    "refrigerate_after_opening": 3,
+    "refrigerate_after_opening_min": 3,
     "refrigerate_after_opening_max": 5,
     "refrigerate_after_opening_metric": "Days",
     "refrigerateOpen": 1
   },
   {
     "name": "Canadian bacon",
+    "Name_subtitle": "whole",
+    "Keywords": "Canadian bacon,bacon,whole",
+    "Refrigerate_min": 2,
+    "Refrigerate_max": 2,
+    "refrigerate_metric": "Weeks",
+    "refrigerate": 1
+  },
+  {
+    "name": "Canadian bacon",
     "Name_subtitle": "sliced",
     "Keywords": "Canadian bacon,bacon,sliced",
+    "Refrigerate_min": 10,
+    "Refrigerate_max": 10,
+    "refrigerate_metric": "Days",
+    "refrigerate": 1,
     "DOP_Refrigerate_Min": 80,
     "DOP_Refrigerate_Max": 80,
-    "DOP_Refrigerate_Metric": "Days",
-    "refrigerate": 1
+    "DOP_Refrigerate_Metric": "Days"
   },
   {
     "name": "Almond oil",
@@ -3838,13 +4226,38 @@
     "refrigerate": 1
   },
   {
+    "name": "Duck fat",
+    "Keywords": "Duck fat,duck",
+    "Refrigerate_min": 30,
+    "Refrigerate_max": 30,
+    "refrigerate_metric": "Days",
+    "refrigerate": 1
+  },
+  {
+    "name": "Bacon grease",
+    "Keywords": "Bacon grease,bacon,grease",
+    "Refrigerate_min": 6,
+    "Refrigerate_max": 6,
+    "refrigerate_metric": "Months",
+    "refrigerate": 1
+  },
+  {
+    "name": "Frying oil",
+    "Name_subtitle": "re-used",
+    "Keywords": "Frying oil,re-used oil,oil",
+    "Refrigerate_min": 1,
+    "Refrigerate_max": 1,
+    "refrigerate_metric": "Months",
+    "refrigerate": 1
+  },
+  {
     "name": "Almond extract",
     "Keywords": "Almond extract",
     "pantry_min": 2,
     "pantry_max": 2,
     "pantry_metric": "Years",
     "pantry": 1,
-    "pantry_after_opening": 12,
+    "pantry_after_opening_min": 12,
     "pantry_after_opening_max": 12,
     "pantry_after_opening_metric": "Months",
     "pantryOpen": 1
@@ -3856,7 +4269,7 @@
     "pantry_max": 2,
     "pantry_metric": "Years",
     "pantry": 1,
-    "pantry_after_opening": 12,
+    "pantry_after_opening_min": 12,
     "pantry_after_opening_max": 12,
     "pantry_after_opening_metric": "Months",
     "pantryOpen": 1
@@ -3868,7 +4281,7 @@
     "pantry_max": 2,
     "pantry_metric": "Years",
     "pantry": 1,
-    "pantry_after_opening": 12,
+    "pantry_after_opening_min": 12,
     "pantry_after_opening_max": 12,
     "pantry_after_opening_metric": "Months",
     "pantryOpen": 1
@@ -3880,7 +4293,7 @@
     "pantry_max": 2,
     "pantry_metric": "Years",
     "pantry": 1,
-    "pantry_after_opening": 12,
+    "pantry_after_opening_min": 12,
     "pantry_after_opening_max": 12,
     "pantry_after_opening_metric": "Months",
     "pantryOpen": 1
@@ -3892,7 +4305,7 @@
     "pantry_max": 2,
     "pantry_metric": "Years",
     "pantry": 1,
-    "pantry_after_opening": 12,
+    "pantry_after_opening_min": 12,
     "pantry_after_opening_max": 12,
     "pantry_after_opening_metric": "Months",
     "pantryOpen": 1
@@ -3904,7 +4317,7 @@
     "pantry_max": 2,
     "pantry_metric": "Years",
     "pantry": 1,
-    "pantry_after_opening": 12,
+    "pantry_after_opening_min": 12,
     "pantry_after_opening_max": 12,
     "pantry_after_opening_metric": "Months",
     "pantryOpen": 1
@@ -3925,13 +4338,38 @@
     "pantry_min": 2,
     "pantry_max": 2,
     "pantry_metric": "Years",
-    "pantry": 1
+    "pantry": 1,
+    "Refrigerate_min": 18,
+    "Refrigerate_max": 24,
+    "refrigerate_metric": "Months",
+    "refrigerate": 1
   },
   {
-    "name": "Hard liquors",
-    "Keywords": "Hard liquors,liquor",
-    "pantry_metric": "Indefinitely",
-    "pantry": 1
+    "name": "Lemon juice",
+    "Name_subtitle": "fresh squeezed",
+    "Keywords": "Lemon juice,juice,fresh squeezed,squeezed,juices",
+    "Refrigerate_min": 6,
+    "Refrigerate_max": 6,
+    "refrigerate_metric": "Days",
+    "refrigerate": 1
+  },
+  {
+    "name": "Apple juice",
+    "Name_subtitle": "fresh squeezed",
+    "Keywords": "Apple juice,juice,fresh squeezed,squeezed,juices,apple",
+    "Refrigerate_min": 6,
+    "Refrigerate_max": 6,
+    "refrigerate_metric": "Days",
+    "refrigerate": 1
+  },
+  {
+    "name": "Carrot juice",
+    "Name_subtitle": "fresh squeezed",
+    "Keywords": "Carrot juice,juice,fresh squeezed,squeezed,juices",
+    "Refrigerate_min": 6,
+    "Refrigerate_max": 6,
+    "refrigerate_metric": "Days",
+    "refrigerate": 1
   },
   {
     "name": "Cream liquors",
@@ -3946,12 +4384,12 @@
     "name": "Coffee",
     "Name_subtitle": "commercial ground, non-vacuum",
     "Keywords": "Coffee,commercial ground, non-vacuum",
-    "pantry_after_opening": 2,
+    "pantry_after_opening_min": 2,
     "pantry_after_opening_max": 2,
     "pantry_after_opening_metric": "Weeks",
     "pantry": 1,
     "pantryOpen": 1,
-    "refrigerate_after_opening": 1,
+    "refrigerate_after_opening_min": 1,
     "refrigerate_after_opening_max": 1,
     "refrigerate_after_opening_metric": "Months",
     "refrigerate": 1,
@@ -3970,7 +4408,7 @@
     "name": "Milk",
     "Name_subtitle": "lactose-free",
     "Keywords": "Milk,lactose,lactose-free",
-    "refrigerate_after_opening": 1,
+    "refrigerate_after_opening_min": 1,
     "refrigerate_after_opening_max": 1,
     "refrigerate_after_opening_metric": "Weeks",
     "refrigerate": 1,
@@ -3991,10 +4429,28 @@
     "DOP_Refrigerate_Max": 4,
     "DOP_Refrigerate_Metric": "Months",
     "refrigerate": 1,
-    "refrigerate_after_opening": 3,
+    "refrigerate_after_opening_min": 3,
     "refrigerate_after_opening_max": 7,
     "refrigerate_after_opening_metric": "Days",
     "refrigerateOpen": 1
+  },
+  {
+    "name": "Quark",
+    "Name_subtitle": "fresh cheese",
+    "Keywords": "Quark,fresh cheese,cheese",
+    "Refrigerate_min": 7,
+    "Refrigerate_max": 10,
+    "refrigerate_metric": "Days",
+    "refrigerate": 1
+  },
+  {
+    "name": "Zucchini",
+    "Name_subtitle": "fresh, whole",
+    "Keywords": "Zucchini,fresh, whole",
+    "Refrigerate_min": 1,
+    "Refrigerate_max": 1,
+    "refrigerate_metric": "Weeks",
+    "refrigerate": 1
   },
   {
     "name": "Hot peppers",
@@ -4046,16 +4502,10 @@
     "pantry": 1
   },
   {
-    "name": "Apple cider vinegar",
-    "Keywords": "Apple cider vinegar,Apple cider, vinegar,cider,apple",
-    "pantry_metric": "Indefinitely",
-    "pantry": 1
-  },
-  {
     "name": "Nutrition supplement drinks",
     "Name_subtitle": "canned",
     "Keywords": "Nutrition supplement drinks,drinks,canned,supplement,Boost,Ensure",
-    "refrigerate_after_opening": 2,
+    "refrigerate_after_opening_min": 2,
     "refrigerate_after_opening_max": 2,
     "refrigerate_after_opening_metric": "Days",
     "refrigerate": 1,
@@ -4072,7 +4522,7 @@
   {
     "name": "Thai red curry paste",
     "Keywords": "Thai red curry paste,red curry paste,curry paste,paste,curry",
-    "refrigerate_after_opening": 5,
+    "refrigerate_after_opening_min": 5,
     "refrigerate_after_opening_max": 5,
     "refrigerate_after_opening_metric": "Days",
     "refrigerate": 1,
@@ -4082,38 +4532,103 @@
     "name": "Yeast",
     "Name_subtitle": "packaged",
     "Keywords": "Yeast,packaged",
-    "refrigerate_after_opening": 4,
+    "refrigerate_after_opening_min": 4,
     "refrigerate_after_opening_max": 4,
     "refrigerate_after_opening_metric": "Months",
     "refrigerate": 1,
     "refrigerateOpen": 1
   },
   {
+    "name": "Applesauce",
+    "Name_subtitle": "homemade",
+    "Keywords": "Applesauce,homemade",
+    "Refrigerate_min": 3,
+    "Refrigerate_max": 3,
+    "refrigerate_metric": "Weeks",
+    "refrigerate": 1
+  },
+  {
+    "name": "Pate",
+    "Name_subtitle": "meat ",
+    "Keywords": "Pate,meat",
+    "Refrigerate_min": 7,
+    "Refrigerate_max": 7,
+    "refrigerate_metric": "Days",
+    "refrigerate": 1
+  },
+  {
+    "name": "Pate",
+    "Name_subtitle": "poultry",
+    "Keywords": "Pate,poultry",
+    "Refrigerate_min": 7,
+    "Refrigerate_max": 7,
+    "refrigerate_metric": "Days",
+    "refrigerate": 1
+  },
+  {
     "name": "Cranberry sauce",
     "Name_subtitle": "canned",
     "Keywords": "Cranberry sauce,sauce,canned",
-    "refrigerate_after_opening": 1,
+    "refrigerate_after_opening_min": 1,
     "refrigerate_after_opening_max": 2,
     "refrigerate_after_opening_metric": "Weeks",
     "refrigerate": 1,
     "refrigerateOpen": 1
   },
   {
+    "name": "Cranberry sauce",
+    "Name_subtitle": "homemade",
+    "Keywords": "Cranberry sauce,sauce,homemade",
+    "Refrigerate_min": 7,
+    "Refrigerate_max": 10,
+    "refrigerate_metric": "Days",
+    "refrigerate": 1
+  },
+  {
     "name": "Vegetable juice",
     "Name_subtitle": "commercial, sold refrigerated",
     "Keywords": "Vegetable juice,commercial,refrigerated,vegetable",
-    "DOP_Refrigerate_Metric": "Package use-by date",
+    "Refrigerate_min": 1,
+    "Refrigerate_max": 1,
+    "refrigerate_metric": "Months",
     "refrigerate": 1
   },
   {
     "name": "Vegetable juice",
     "Name_subtitle": "homemade",
     "Keywords": "Vegetable juice,juices,homemade,vegetable",
-    "refrigerate_after_opening": 3,
+    "refrigerate_after_opening_min": 3,
     "refrigerate_after_opening_max": 5,
     "refrigerate_after_opening_metric": "Days",
     "refrigerate": 1,
     "refrigerateOpen": 1
+  },
+  {
+    "name": "Marinated vegetables",
+    "Name_subtitle": "in oil",
+    "Keywords": "Marinated vegetables,vegetables,oil,vegetable",
+    "Refrigerate_min": 3,
+    "Refrigerate_max": 4,
+    "refrigerate_metric": "Days",
+    "refrigerate": 1
+  },
+  {
+    "name": "Pizza",
+    "Name_subtitle": "frozen",
+    "Keywords": "Pizza,frozen",
+    "Refrigerate_min": 3,
+    "Refrigerate_max": 4,
+    "refrigerate_metric": "Days",
+    "refrigerate": 1
+  },
+  {
+    "name": "Salsa",
+    "Name_subtitle": "fresh",
+    "Keywords": "Salsa,fresh",
+    "Refrigerate_min": 4,
+    "Refrigerate_max": 7,
+    "refrigerate_metric": "Days",
+    "refrigerate": 1
   },
   {
     "name": "Chia seeds",
@@ -4130,7 +4645,11 @@
     "pantry_min": 3,
     "pantry_max": 5,
     "pantry_metric": "Days",
-    "pantry": 1
+    "pantry": 1,
+    "Refrigerate_min": 2,
+    "Refrigerate_max": 3,
+    "refrigerate_metric": "Months",
+    "refrigerate": 1
   },
   {
     "name": "Amaranth",
@@ -4313,13 +4832,35 @@
     "pantry": 1
   },
   {
+    "name": "Rabbit",
+    "Name_subtitle": "whole, fresh",
+    "Keywords": "Rabbit,whole, fresh",
+    "Refrigerate_min": 2,
+    "Refrigerate_max": 2,
+    "refrigerate_metric": "Days",
+    "refrigerate": 1
+  },
+  {
     "name": "Spaghetti squash",
     "Name_subtitle": "whole",
     "Keywords": "Spaghetti squash,squash,whole",
     "pantry_min": 2,
     "pantry_max": 2,
     "pantry_metric": "Months",
-    "pantry": 1
+    "pantry": 1,
+    "Refrigerate_min": 1,
+    "Refrigerate_max": 2,
+    "refrigerate_metric": "Weeks",
+    "refrigerate": 1
+  },
+  {
+    "name": "Spaghetti squash",
+    "Name_subtitle": "cut",
+    "Keywords": "Spaghetti squash,squash,cut",
+    "Refrigerate_min": 4,
+    "Refrigerate_max": 5,
+    "refrigerate_metric": "Days",
+    "refrigerate": 1
   },
   {
     "name": "Garam masala",
@@ -4333,9 +4874,7 @@
     "name": "Tomato sauce",
     "Name_subtitle": "spaghetti, pizza",
     "Keywords": "Tomato sauce,sauce,spaghetti, pizza",
-    "pantry_metric": "Package use-by date",
-    "pantry": 1,
-    "refrigerate_after_opening": 3,
+    "refrigerate_after_opening_min": 3,
     "refrigerate_after_opening_max": 5,
     "refrigerate_after_opening_metric": "Days",
     "refrigerate": 1,
@@ -4347,13 +4886,17 @@
     "pantry_min": 10,
     "pantry_max": 10,
     "pantry_metric": "Days",
-    "pantry": 1
+    "pantry": 1,
+    "Refrigerate_min": 5,
+    "Refrigerate_max": 5,
+    "refrigerate_metric": "Days",
+    "refrigerate": 1
   },
   {
     "name": "Coconut cream",
     "Name_subtitle": "canned",
     "Keywords": "coconut cream,coconut,cream,canned,can",
-    "refrigerate_after_opening": 4,
+    "refrigerate_after_opening_min": 4,
     "refrigerate_after_opening_max": 4,
     "refrigerate_after_opening_metric": "Days",
     "refrigerate": 1,
@@ -4363,11 +4906,20 @@
     "name": "Coconut milk",
     "Name_subtitle": "canned",
     "Keywords": "coconut milk,coconut,milk,canned,can",
-    "refrigerate_after_opening": 4,
+    "refrigerate_after_opening_min": 4,
     "refrigerate_after_opening_max": 4,
     "refrigerate_after_opening_metric": "Days",
     "refrigerate": 1,
     "refrigerateOpen": 1
+  },
+  {
+    "name": "Coleslaw",
+    "Name_subtitle": "homemade, prepared",
+    "Keywords": "coleslaw,homemade,homemade coleslaw,prepared,prepared coleslaw",
+    "Refrigerate_min": 3,
+    "Refrigerate_max": 5,
+    "refrigerate_metric": "Days",
+    "refrigerate": 1
   },
   {
     "name": "Pumpkin seeds",
@@ -4376,7 +4928,11 @@
     "pantry_min": 6,
     "pantry_max": 6,
     "pantry_metric": "Months",
-    "pantry": 1
+    "pantry": 1,
+    "Refrigerate_min": 6,
+    "Refrigerate_max": 6,
+    "refrigerate_metric": "Months",
+    "refrigerate": 1
   },
   {
     "name": "Pumpkin seeds",
@@ -4418,21 +4974,30 @@
     "name": "Sunflower seeds",
     "Name_subtitle": "roasted, no shell",
     "Keywords": "sunflower,sunflower seed,sunflower seeds,seed,seeds,kernal,shell",
-    "pantry_after_opening": 3,
+    "pantry_after_opening_min": 3,
     "pantry_after_opening_max": 4,
     "pantry_after_opening_metric": "Months",
     "pantry": 1,
     "pantryOpen": 1,
-    "refrigerate_after_opening": 7,
+    "refrigerate_after_opening_min": 7,
     "refrigerate_after_opening_max": 8,
     "refrigerate_after_opening_metric": "Months",
     "refrigerate": 1,
     "refrigerateOpen": 1
   },
   {
+    "name": "Parsley",
+    "Name_subtitle": "fresh",
+    "Keywords": "parsley",
+    "Refrigerate_min": 2,
+    "Refrigerate_max": 3,
+    "refrigerate_metric": "Days",
+    "refrigerate": 1
+  },
+  {
     "name": "Sesame oil",
     "Keywords": "sesame oil,sesame,oil",
-    "pantry_after_opening": 6,
+    "pantry_after_opening_min": 6,
     "pantry_after_opening_max": 6,
     "pantry_after_opening_metric": "Months",
     "pantry": 1,
@@ -4447,27 +5012,14 @@
     "pantry": 1
   },
   {
-    "name": "Capers",
-    "Name_subtitle": "in jar",
-    "Keywords": "capers,caper,jar capers,in jar,jar",
-    "pantry_metric": "Package use-by date",
-    "pantry": 1
-  },
-  {
-    "name": "Chocolate hazlenut spread",
-    "Keywords": "hazelnut spread, spread, hazelnut, chocolate spread, chocolate,Nutella,cocoa,cocoa spread",
-    "pantry_metric": "Package use-by date",
-    "pantry": 1
-  },
-  {
     "name": "Roasted nuts (peanuts, cashews, almonds)",
     "Keywords": "roasted nuts,roasted,nuts,roasted peanuts,roasted almonds,roasted cashews,almonds,cashews,peanuts",
-    "pantry_after_opening": 1,
+    "pantry_after_opening_min": 1,
     "pantry_after_opening_max": 2,
     "pantry_after_opening_metric": "Weeks",
     "pantry": 1,
     "pantryOpen": 1,
-    "refrigerate_after_opening": 4,
+    "refrigerate_after_opening_min": 4,
     "refrigerate_after_opening_max": 4,
     "refrigerate_after_opening_metric": "Weeks",
     "refrigerate": 1,
@@ -4477,7 +5029,7 @@
     "name": "Tuna",
     "Name_subtitle": "packet",
     "Keywords": "tuna packet,tuna,packet,retort,retort packaging",
-    "refrigerate_after_opening": 3,
+    "refrigerate_after_opening_min": 3,
     "refrigerate_after_opening_max": 4,
     "refrigerate_after_opening_metric": "Days",
     "refrigerate": 1,
@@ -4500,7 +5052,7 @@
     "pantry_max": 1,
     "pantry_metric": "Years",
     "pantry": 1,
-    "refrigerate_after_opening": 1,
+    "refrigerate_after_opening_min": 1,
     "refrigerate_after_opening_max": 2,
     "refrigerate_after_opening_metric": "Days",
     "refrigerate": 1,
@@ -4510,18 +5062,35 @@
     "name": "Pimento cheese",
     "Name_subtitle": "packaged",
     "Keywords": "pimento cheese,pimento,cheese",
-    "DOP_Refrigerate_Metric": "Package use-by date",
-    "refrigerate": 1,
-    "refrigerate_after_opening": 4,
+    "refrigerate_after_opening_min": 4,
     "refrigerate_after_opening_max": 4,
     "refrigerate_after_opening_metric": "Weeks",
+    "refrigerate": 1,
     "refrigerateOpen": 1
+  },
+  {
+    "name": "Bison",
+    "Name_subtitle": "whole",
+    "Keywords": "bison whole,bison,whole",
+    "Refrigerate_min": 3,
+    "Refrigerate_max": 5,
+    "refrigerate_metric": "Days",
+    "refrigerate": 1
+  },
+  {
+    "name": "Bison",
+    "Name_subtitle": "ground",
+    "Keywords": "ground bison,bison,ground",
+    "Refrigerate_min": 1,
+    "Refrigerate_max": 2,
+    "refrigerate_metric": "Days",
+    "refrigerate": 1
   },
   {
     "name": "Salad dressing",
     "Name_subtitle": "creamy",
     "Keywords": "creamy salad dressing,salad,dressing,salad dressing,creamy",
-    "refrigerate_after_opening": 3,
+    "refrigerate_after_opening_min": 3,
     "refrigerate_after_opening_max": 4,
     "refrigerate_after_opening_metric": "Weeks",
     "refrigerate": 1,
@@ -4529,9 +5098,18 @@
   },
   {
     "name": "Salad dressing",
+    "Name_subtitle": "vinaigrette,homemade",
+    "Keywords": "salad dressing,vinaigrette,salad,dressing,homemade",
+    "Refrigerate_min": 2,
+    "Refrigerate_max": 3,
+    "refrigerate_metric": "Weeks",
+    "refrigerate": 1
+  },
+  {
+    "name": "Salad dressing",
     "Name_subtitle": "vinaigrette",
     "Keywords": "salad dressing,vinaigrette,salad,dressing",
-    "refrigerate_after_opening": 4,
+    "refrigerate_after_opening_min": 4,
     "refrigerate_after_opening_max": 4,
     "refrigerate_after_opening_metric": "Weeks",
     "refrigerate": 1,
@@ -4541,13 +5119,47 @@
     "name": "Salad dressing",
     "Name_subtitle": "dry,packaged",
     "Keywords": "salad dressing,salad,dressing,dry,packaged,package,powdered,powder",
-    "pantry_metric": "Package use-by date",
-    "pantry": 1,
-    "refrigerate_after_opening": 4,
+    "refrigerate_after_opening_min": 4,
     "refrigerate_after_opening_max": 4,
     "refrigerate_after_opening_metric": "Weeks",
     "refrigerate": 1,
     "refrigerateOpen": 1
+  },
+  {
+    "name": "Cheese Curds",
+    "Name_subtitle": "fresh, unaged",
+    "Keywords": "cheese curd,cheese,curd,curds,cheese curds",
+    "Refrigerate_min": 2,
+    "Refrigerate_max": 2,
+    "refrigerate_metric": "Weeks",
+    "refrigerate": 1
+  },
+  {
+    "name": "Vegetable soup",
+    "Name_subtitle": "homemade",
+    "Keywords": "vegetable soup,vegetable,soup",
+    "Refrigerate_min": 3,
+    "Refrigerate_max": 4,
+    "refrigerate_metric": "Days",
+    "refrigerate": 1
+  },
+  {
+    "name": "Chorizo",
+    "Name_subtitle": "fresh",
+    "Keywords": "fresh chorizo,chorizo",
+    "Refrigerate_min": 1,
+    "Refrigerate_max": 2,
+    "refrigerate_metric": "Days",
+    "refrigerate": 1
+  },
+  {
+    "name": "Chorizo",
+    "Name_subtitle": "smoked and processed, uncooked",
+    "Keywords": "smoked chorizo,chorizo,processed chorizo,smoked,processed,uncooked,uncooked processed chorizo,uncooked smoked chorizo",
+    "Refrigerate_min": 1,
+    "Refrigerate_max": 1,
+    "refrigerate_metric": "Weeks",
+    "refrigerate": 1
   },
   {
     "name": "Chorizo",
@@ -4557,7 +5169,7 @@
     "pantry_max": 1,
     "pantry_metric": "Years",
     "pantry": 1,
-    "refrigerate_after_opening": 1,
+    "refrigerate_after_opening_min": 1,
     "refrigerate_after_opening_max": 1,
     "refrigerate_after_opening_metric": "Months",
     "refrigerate": 1,
@@ -4571,7 +5183,7 @@
     "pantry_max": 1,
     "pantry_metric": "Years",
     "pantry": 1,
-    "refrigerate_after_opening": 1,
+    "refrigerate_after_opening_min": 1,
     "refrigerate_after_opening_max": 2,
     "refrigerate_after_opening_metric": "Months",
     "refrigerate": 1,
@@ -4587,12 +5199,6 @@
     "pantry": 1
   },
   {
-    "name": "Cooking wine",
-    "Keywords": "cooking wine,wine,cooking",
-    "pantry_metric": "Package use-by date",
-    "pantry": 1
-  },
-  {
     "name": "Bulgur",
     "Keywords": "bulgur",
     "pantry_min": 6,
@@ -4601,13 +5207,44 @@
     "pantry": 1
   },
   {
+    "name": "Bratwurst",
+    "Name_subtitle": "fresh",
+    "Keywords": "fresh brautwurst,brautwurst,fresh",
+    "Refrigerate_min": 2,
+    "Refrigerate_max": 3,
+    "refrigerate_metric": "Days",
+    "refrigerate": 1
+  },
+  {
+    "name": "Bratwurst",
+    "Name_subtitle": "smoked and processed",
+    "Keywords": "smoked brautwurst,processed brautwurst,bratwurst,smoked,processed",
+    "Refrigerate_min": 5,
+    "Refrigerate_max": 7,
+    "refrigerate_metric": "Days",
+    "refrigerate": 1
+  },
+  {
+    "name": "Edamame",
+    "Name_subtitle": "fresh",
+    "Keywords": "edamame,fresh,fresh edamame,soybeans,soybean",
+    "Refrigerate_min": 4,
+    "Refrigerate_max": 5,
+    "refrigerate_metric": "Days",
+    "refrigerate": 1
+  },
+  {
     "name": "Edamame",
     "Name_subtitle": "salted, dry roasted, out of pod",
     "Keywords": "edamame,soybean,soybeans,salted,roasted,dry roasted",
     "pantry_min": 12,
     "pantry_max": 12,
     "pantry_metric": "Months",
-    "pantry": 1
+    "pantry": 1,
+    "Refrigerate_min": 6,
+    "Refrigerate_max": 6,
+    "refrigerate_metric": "Months",
+    "refrigerate": 1
   },
   {
     "name": "Breadcrumbs",
@@ -4622,11 +5259,20 @@
     "name": "Milk ",
     "Name_subtitle": "shelf-stable",
     "Keywords": "shelf stable milk,milk,shelf,stable,UHT,ultrapasteurized,aseptic packaging",
-    "refrigerate_after_opening": 5,
+    "refrigerate_after_opening_min": 5,
     "refrigerate_after_opening_max": 7,
     "refrigerate_after_opening_metric": "Days",
     "refrigerate": 1,
     "refrigerateOpen": 1
+  },
+  {
+    "name": "Salsa",
+    "Name_subtitle": "homemade, fresh",
+    "Keywords": "homemade salsa,homemade,salsa",
+    "Refrigerate_min": 5,
+    "Refrigerate_max": 7,
+    "refrigerate_metric": "Days",
+    "refrigerate": 1
   },
   {
     "name": "Salsa",
@@ -4661,7 +5307,11 @@
     "pantry_min": 6,
     "pantry_max": 8,
     "pantry_metric": "Months",
-    "pantry": 1
+    "pantry": 1,
+    "Refrigerate_min": 1,
+    "Refrigerate_max": 2,
+    "refrigerate_metric": "Years",
+    "refrigerate": 1
   },
   {
     "name": "Corn syrup",
@@ -4669,13 +5319,6 @@
     "pantry_min": 3,
     "pantry_max": 3,
     "pantry_metric": "Years",
-    "pantry": 1
-  },
-  {
-    "name": "Nutrition supplement drinks",
-    "Name_subtitle": "bottled",
-    "Keywords": "Nutrition supplement drinks,drinks,bottled,supplement",
-    "pantry_metric": "Package use-by date",
     "pantry": 1
   },
   {
@@ -4693,15 +5336,34 @@
     "pantry_min": 2,
     "pantry_max": 3,
     "pantry_metric": "Weeks",
-    "pantry": 1
+    "pantry": 1,
+    "Refrigerate_min": 3,
+    "Refrigerate_max": 3,
+    "refrigerate_metric": "Months",
+    "refrigerate": 1
+  },
+  {
+    "name": "Coconut flour",
+    "Keywords": "coconut flour,coconut,flour",
+    "Refrigerate_min": 9,
+    "Refrigerate_max": 12,
+    "refrigerate_metric": "Months",
+    "refrigerate": 1
+  },
+  {
+    "name": "Pecans",
+    "Name_subtitle": "chopped",
+    "Keywords": "chopped pecans,pecan,pecans,chopped",
+    "Refrigerate_min": 12,
+    "Refrigerate_max": 12,
+    "refrigerate_metric": "Months",
+    "refrigerate": 1
   },
   {
     "name": "Polenta",
     "Name_subtitle": "shelf-stable",
     "Keywords": "polenta,shelf stable,shelf stable polenta",
-    "pantry_metric": "Package use-by date",
-    "pantry": 1,
-    "refrigerate_after_opening": 5,
+    "refrigerate_after_opening_min": 5,
     "refrigerate_after_opening_max": 7,
     "refrigerate_after_opening_metric": "Days",
     "refrigerate": 1,
@@ -4719,20 +5381,31 @@
     "name": "Milk ",
     "Name_subtitle": "ultra-pasteurized",
     "Keywords": "ultra pasteurized milk,milk,pasteurized,ultra",
-    "refrigerate_after_opening": 7,
+    "Refrigerate_min": 1,
+    "Refrigerate_max": 3,
+    "refrigerate_metric": "Months",
+    "refrigerate": 1,
+    "refrigerate_after_opening_min": 7,
     "refrigerate_after_opening_max": 10,
     "refrigerate_after_opening_metric": "Days",
-    "refrigerate": 1,
     "refrigerateOpen": 1
   },
   {
     "name": "Coconut water",
     "Keywords": "coconut water,coconut,water",
-    "refrigerate_after_opening": 1,
+    "refrigerate_after_opening_min": 1,
     "refrigerate_after_opening_max": 2,
     "refrigerate_after_opening_metric": "Days",
     "refrigerate": 1,
     "refrigerateOpen": 1
+  },
+  {
+    "name": "Celery root",
+    "Keywords": "celeriac,celery root,celery",
+    "Refrigerate_min": 1,
+    "Refrigerate_max": 1,
+    "refrigerate_metric": "Weeks",
+    "refrigerate": 1
   },
   {
     "name": "Apple cider",
@@ -4741,7 +5414,11 @@
     "pantry_min": 2,
     "pantry_max": 3,
     "pantry_metric": "Days",
-    "pantry": 1
+    "pantry": 1,
+    "Refrigerate_min": 2,
+    "Refrigerate_max": 3,
+    "refrigerate_metric": "Weeks",
+    "refrigerate": 1
   },
   {
     "name": "Yuzu juice",
@@ -4750,15 +5427,41 @@
     "DOP_Refrigerate_Max": 12,
     "DOP_Refrigerate_Metric": "Months",
     "refrigerate": 1,
-    "refrigerate_after_opening": 3,
+    "refrigerate_after_opening_min": 3,
     "refrigerate_after_opening_max": 4,
     "refrigerate_after_opening_metric": "Months",
     "refrigerateOpen": 1
   },
   {
+    "name": "Yuzu",
+    "Name_subtitle": "fruit, fresh",
+    "Keywords": "yuzu,yuzu fruit",
+    "Refrigerate_min": 5,
+    "Refrigerate_max": 7,
+    "refrigerate_metric": "Days",
+    "refrigerate": 1
+  },
+  {
+    "name": "Pastrami",
+    "Keywords": "pastrami",
+    "Refrigerate_min": 40,
+    "Refrigerate_max": 40,
+    "refrigerate_metric": "Days",
+    "refrigerate": 1
+  },
+  {
+    "name": "Kugel",
+    "Name_subtitle": "homemade",
+    "Keywords": "kugel,homemade,homemade kugel",
+    "Refrigerate_min": 3,
+    "Refrigerate_max": 4,
+    "refrigerate_metric": "Days",
+    "refrigerate": 1
+  },
+  {
     "name": "Avocado Oil",
     "Keywords": "avodaco oil,avocado,oil",
-    "pantry_after_opening": 6,
+    "pantry_after_opening_min": 6,
     "pantry_after_opening_max": 6,
     "pantry_after_opening_metric": "Months",
     "pantry": 1,
@@ -4767,28 +5470,30 @@
   {
     "name": "Balsamic vinegar",
     "Keywords": "balsamic vinegar,balsamic,vinegar",
-    "refrigerate_after_opening": 18,
+    "refrigerate_after_opening_min": 18,
     "refrigerate_after_opening_max": 18,
     "refrigerate_after_opening_metric": "Months",
     "refrigerate": 1,
     "refrigerateOpen": 1
   },
   {
+    "name": "Aioli",
+    "Name_subtitle": "homemade",
+    "Keywords": "garlic aioli,aioli,garlic,mayonnaise,mayo,garlic mayo,garlic mayonnaise,mayo",
+    "Refrigerate_min": 3,
+    "Refrigerate_max": 4,
+    "refrigerate_metric": "Days",
+    "refrigerate": 1
+  },
+  {
     "name": "Salad dressing",
     "Name_subtitle": "homemade",
     "Keywords": "homemade salad dressing,homemade,salad dressing,salad,dressing",
-    "refrigerate_after_opening": 2,
+    "refrigerate_after_opening_min": 2,
     "refrigerate_after_opening_max": 2,
     "refrigerate_after_opening_metric": "Weeks",
     "refrigerate": 1,
     "refrigerateOpen": 1
-  },
-  {
-    "name": "Base",
-    "Name_subtitle": "beef, vegetable",
-    "Keywords": "beef base,vegetable base,base,beef,vegetable",
-    "pantry_metric": "Package use-by date",
-    "pantry": 1
   },
   {
     "name": "Anchovies",
@@ -4798,11 +5503,62 @@
     "pantry_max": 5,
     "pantry_metric": "Years",
     "pantry": 1,
-    "refrigerate_after_opening": 3,
+    "refrigerate_after_opening_min": 3,
     "refrigerate_after_opening_max": 4,
     "refrigerate_after_opening_metric": "Days",
     "refrigerate": 1,
     "refrigerateOpen": 1
+  },
+  {
+    "name": "Radicchio",
+    "Keywords": "radicchio",
+    "Refrigerate_min": 2,
+    "Refrigerate_max": 3,
+    "refrigerate_metric": "Weeks",
+    "refrigerate": 1
+  },
+  {
+    "name": "Prosciutto",
+    "Keywords": "prosciutto",
+    "Refrigerate_min": 2,
+    "Refrigerate_max": 3,
+    "refrigerate_metric": "Months",
+    "refrigerate": 1
+  },
+  {
+    "name": "Ham ",
+    "Name_subtitle": "uncured, fresh, cooked",
+    "Keywords": "ham,uncured,fresh,cooked,uncured ham,fully cooked,fully cooked uncured ham",
+    "Refrigerate_min": 3,
+    "Refrigerate_max": 4,
+    "refrigerate_metric": "Days",
+    "refrigerate": 1
+  },
+  {
+    "name": "Ham ",
+    "Name_subtitle": "uncured, fresh, uncooked",
+    "Keywords": "ham,uncured,fresh,uncooked,uncured ham,uncured ham uncooked",
+    "Refrigerate_min": 3,
+    "Refrigerate_max": 5,
+    "refrigerate_metric": "Days",
+    "refrigerate": 1
+  },
+  {
+    "name": "Arugula",
+    "Keywords": "arugula,greens,salad greens,salad",
+    "Refrigerate_min": 3,
+    "Refrigerate_max": 7,
+    "refrigerate_metric": "Days",
+    "refrigerate": 1
+  },
+  {
+    "name": "Mung bean",
+    "Name_subtitle": "sprouts",
+    "Keywords": "sprouted mung beans,sprouted mung bean,sprout,mung beans,mung bean,mung,bean,mungbean,sprouts",
+    "Refrigerate_min": 4,
+    "Refrigerate_max": 6,
+    "refrigerate_metric": "Weeks",
+    "refrigerate": 1
   },
   {
     "name": "Mung bean",
@@ -4811,7 +5567,11 @@
     "pantry_min": 1,
     "pantry_max": 1,
     "pantry_metric": "Years",
-    "pantry": 1
+    "pantry": 1,
+    "Refrigerate_min": 1,
+    "Refrigerate_max": 1,
+    "refrigerate_metric": "Years",
+    "refrigerate": 1
   },
   {
     "name": "Mung bean",
@@ -4828,7 +5588,20 @@
     "pantry_min": 5,
     "pantry_max": 6,
     "pantry_metric": "Months",
-    "pantry": 1
+    "pantry": 1,
+    "Refrigerate_min": 5,
+    "Refrigerate_max": 6,
+    "refrigerate_metric": "Months",
+    "refrigerate": 1
+  },
+  {
+    "name": "Bacon",
+    "Name_subtitle": "uncured",
+    "Keywords": "uncured bacon,nitrite-free bacon,natural bacon,uncured,nitrite-free,nitrite,natural,bacon",
+    "Refrigerate_min": 4,
+    "Refrigerate_max": 7,
+    "refrigerate_metric": "Days",
+    "refrigerate": 1
   },
   {
     "name": "Mustard",

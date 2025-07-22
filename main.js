@@ -58,7 +58,7 @@ document
         const shelfLife_min = minimumShelfLife(food.name, storage);
         const shelfLife_max = maximumShelfLife(food.name, storage);
         console.log(shelfLife_min);
-        // Calculate expiration date: today + 7 days
+        // Calculate expiration date
         const today = new Date();
         const expiresDateMin1 = new Date(today);
         const expiresDateMax1 = new Date(today);
@@ -106,6 +106,12 @@ function renderInventory() {
     //Todo: add it so that when this is clicked, it then calculates the opened date shelf life
     tr.addEventListener("click", function () {
       inventory[idx].opened = !inventory[idx].opened;
+      // Calculate expiration if opened
+      if (inventory[idx].opened) {
+        inventory[idx].expires = calculateOpenedExpiration(inventory[idx].name);
+      } else {
+        inventory[idx].expires = "Unopened";
+      }
       renderInventory();
     });
     tbody.appendChild(tr);
@@ -187,6 +193,43 @@ function maximumShelfLife(name, storage) {
     if (storage === "pantry") {
       return food.pantry_max;
     }
+  }
+}
+
+function calculateOpenedExpiration(name) {
+  const food = foodExpiryDB.find(
+    (item) => item.name.toLowerCase() === name.toLowerCase()
+  );
+  if (food) {
+    const today = new Date();
+    const expiresDateMin = new Date(today);
+    const expiresDateMax = new Date(today);
+
+    console.log(food);
+    console.log(food.pantry);
+    console.log(food.refrigerate_after_opening_min);
+    if (food.pantry === 1) {
+      if (food.pantry_after_opening_min != null) {
+        expiresDateMin.setDate(today.getDate() + food.pantry_after_opening_min);
+      }
+      if (food.pantry_after_opening_max != null) {
+        expiresDateMax.setDate(today.getDate() + food.pantry_after_opening_max);
+      }
+    } else {
+      if (food.refrigerate_after_opening_min != null) {
+        expiresDateMin.setDate(
+          today.getDate() + food.refrigerate_after_opening_min
+        );
+        if (food.refrigerate_after_opening_max != null) {
+          expiresDateMax.setDate(
+            today.getDate() + food.refrigerate_after_opening_max
+          );
+        }
+      }
+    }
+    return `${formatFriendlyDate(expiresDateMin)} to ${formatFriendlyDate(
+      expiresDateMax
+    )} `;
   }
 }
 // Initial render
