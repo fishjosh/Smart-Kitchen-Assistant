@@ -1,4 +1,5 @@
 // Tab logic
+
 document.querySelectorAll(".tab-btn").forEach((btn) => {
   btn.addEventListener("click", function () {
     document
@@ -19,6 +20,7 @@ let foodExpiryDB = [];
 const form = document.getElementById("grocery-form");
 form.querySelector("button[type=submit]").disabled = true;
 
+/*
 function populateDatalist() {
   const datalist = document.getElementById("item-suggestions");
   datalist.innerHTML = ""; // Clear previous options
@@ -26,22 +28,59 @@ function populateDatalist() {
   const suggestions = new Set();
 
   foodExpiryDB.forEach((item) => {
-    console.log(item);
     // Add the main name
-    if (item.name) suggestions.add(item.name);
+    if (item.name && !/such as|e\.g\./i.test(item.name))
+      suggestions.add(item.name);
 
-    if (item.subtitle) suggestions.add(item.subtitle);
+    // Add subtitle if present
+    if (item.subtitle) {
+      item.subtitle.split(/[,;]+/).forEach((sub) => {
+        const trimmed = sub.trim();
+        if (trimmed && !/such as|e\.g\./i.test(trimmed))
+          suggestions.add(trimmed);
+      });
+    }
 
+    // Add keywords if present
     if (item.keywords) {
       if (Array.isArray(item.keywords)) {
-        item.keywords.forEach((kw) => suggestions.add(kw));
+        item.keywords.forEach((kw) => {
+          const trimmed = kw && kw.trim();
+          if (trimmed && !/such as|e\.g\./i.test(trimmed))
+            suggestions.add(trimmed);
+        });
       } else if (typeof item.keywords === "string") {
-        item.keywords.split(",").forEach((kw) => suggestions.add(kw.trim()));
+        item.keywords.split(",").forEach((kw) => {
+          const trimmed = kw && kw.trim();
+          if (trimmed && !/such as|e\.g\./i.test(trimmed))
+            suggestions.add(trimmed);
+        });
       }
     }
   });
 
   // Add to datalist
+  suggestions.forEach((suggestion) => {
+    const option = document.createElement("option");
+    option.value = suggestion;
+    datalist.appendChild(option);
+  });
+}
+  */
+function populateDatalist() {
+  const datalist = document.getElementById("item-suggestions");
+  datalist.innerHTML = ""; // Clear previous options
+
+  const suggestions = new Set();
+
+  foodExpiryDB.forEach((item) => {
+    // Add the main name
+    if (item.name && !/such as|e\.g\./i.test(item.name)) {
+      suggestions.add(item.name);
+    }
+  });
+
+  // Add suggestions to datalist
   suggestions.forEach((suggestion) => {
     const option = document.createElement("option");
     option.value = suggestion;
@@ -74,29 +113,31 @@ document
   .getElementById("grocery-form")
   .addEventListener("submit", function (e) {
     e.preventDefault();
-    const name = document.getElementById("item-name").value.trim();
-    if (name) {
-      const food = foodExpiryDB.find(
-        (item) => item.name.toLowerCase() === name.toLowerCase()
-      );
-      //storage = whatKindofFood(food);
-      if (!food) {
-        document.getElementById(
-          "grocery-msg"
-        ).textContent = `Food item not found in database :/`;
-        return;
-      }
-      expires = ShelfLife(food);
-      expires = inventory.push({
-        name,
-        expires,
-        storage: food.storage,
-        opened: false,
-      });
-      document.getElementById("grocery-msg").textContent = `Added ${name}`;
+    const userInput = document.getElementById("item-name").value.trim();
+    const food = findFoodEntry(userInput);
+
+    if (!food) {
+      document.getElementById("grocery-msg").textContent =
+        "Couldn't find food in database :/";
       this.reset();
-      renderInventory();
+      return;
     }
+
+    // Use the parent food's name for lookup and expiration logic
+    const inventoryName = food.name; // e.g., "Cheese"
+    const displayName = userInput; // e.g., "parmesan" (what user typed)
+    const expires = ShelfLife(food);
+
+    inventory.push({
+      name: displayName, // Show what user typed in the table
+      baseName: inventoryName, // Store the parent food name for lookups
+      expires,
+      storage: food.storage,
+      opened: false,
+    });
+    document.getElementById("grocery-msg").textContent = `Added ${displayName}`;
+    this.reset();
+    renderInventory();
   });
 
 function renderInventory() {
@@ -151,6 +192,7 @@ function formatFriendlyDate(date) {
       : "th";
   return `${month} ${day}${suffix}`;
 }
+
 /*
 function whatKindofFood(product) {
   let pantryorFridge;
@@ -289,9 +331,18 @@ function ShelfLife(food) {
 }
 
 function calculateOpenedExpiration(name) {
-  const food = foodExpiryDB.find(
+  // Try to find by baseName first, fallback to name
+  let food = foodExpiryDB.find(
     (item) => item.name.toLowerCase() === name.toLowerCase()
   );
+  if (!food && inventory) {
+    const invItem = inventory.find((item) => item.name === name);
+    if (invItem && invItem.baseName) {
+      food = foodExpiryDB.find(
+        (item) => item.name.toLowerCase() === invItem.baseName.toLowerCase()
+      );
+    }
+  }
   if (food) {
     const today = new Date();
     const expiresdateminR = new Date(today);
@@ -378,3 +429,107 @@ function calculateOpenedExpiration(name) {
 }
 // Initial render
 renderInventory();
+
+/*
+function findFoodEntry(userInput) {
+  const normalizedInput = userInput.trim().toLowerCase();
+
+  // 1. Exact match on name
+  let food = foodExpiryDB.find((item) => {
+    return item.name && item.name.trim().toLowerCase() === normalizedInput;
+  });
+
+  // 2. Partial match on name
+  if (!food) {
+    food = foodExpiryDB.find((item) => {
+      return item.name && item.name.toLowerCase().includes(normalizedInput);
+    });
+  }
+
+  // Return the first matching food, or null if no match is found
+  return food || null;
+}
+  */
+
+function findFoodEntry(input) {
+  const normalizedInput = input.trim().toLowerCase();
+
+  // 1. Exact match on name
+  let food = foodExpiryDB.find(
+    (item) => item.name && item.name.trim().toLowerCase() === normalizedInput
+  );
+  if (food) return food;
+
+  // 2. Exact match on keywords
+  food = foodExpiryDB.find((item) => {
+    if (!item.keywords) return false;
+    if (Array.isArray(item.keywords)) {
+      return item.keywords.some(
+        (kw) => kw && kw.trim().toLowerCase() === normalizedInput
+      );
+    } else if (typeof item.keywords === "string") {
+      return item.keywords
+        .split(",")
+        .map((kw) => kw.trim().toLowerCase())
+        .includes(normalizedInput);
+    }
+    return false;
+  });
+  if (food) return food;
+
+  // 3. Partial match on keywords or subtitle
+  food = foodExpiryDB.find((item) => {
+    // Keywords
+    if (item.keywords) {
+      if (Array.isArray(item.keywords)) {
+        if (
+          item.keywords.some(
+            (kw) => kw && kw.trim().toLowerCase().includes(normalizedInput)
+          )
+        )
+          return true;
+      } else if (typeof item.keywords === "string") {
+        if (
+          item.keywords
+            .toLowerCase()
+            .split(",")
+            .some((kw) => kw.trim().includes(normalizedInput))
+        )
+          return true;
+      }
+    }
+    // Subtitle
+    if (item.subtitle && item.subtitle.toLowerCase().includes(normalizedInput))
+      return true;
+
+    // Name contains input (for things like "wheat bread")
+    if (item.name && item.name.toLowerCase().includes(normalizedInput))
+      return true;
+
+    return false;
+  });
+  if (food) return food;
+
+  // 4. Try splitting input and matching any word
+  const words = normalizedInput.split(/\s+/);
+  food = foodExpiryDB.find((item) => {
+    return words.some((word) => {
+      if (item.name && item.name.toLowerCase().includes(word)) return true;
+      if (
+        item.keywords &&
+        ((Array.isArray(item.keywords) &&
+          item.keywords.some((kw) => kw.toLowerCase().includes(word))) ||
+          (typeof item.keywords === "string" &&
+            item.keywords.toLowerCase().includes(word)))
+      )
+        return true;
+      if (item.subtitle && item.subtitle.toLowerCase().includes(word))
+        return true;
+      return false;
+    });
+  });
+  if (food) return food;
+
+  // Not found
+  return null;
+}
