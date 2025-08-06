@@ -1,27 +1,3 @@
-// Import the functions you need from the SDKs you need
-import { initializeApp } from "firebase/app";
-import { getAnalytics } from "firebase/analytics";
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
-
-// Your web app's Firebase configuration
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
-const firebaseConfig = {
-  apiKey: "AIzaSyBYZuTfEiutJlB3yxHpHILL6QdiTZfgqDI",
-  authDomain: "smart-kitchen-assistant-b5309.firebaseapp.com",
-  databaseURL:
-    "https://smart-kitchen-assistant-b5309-default-rtdb.firebaseio.com",
-  projectId: "smart-kitchen-assistant-b5309",
-  storageBucket: "smart-kitchen-assistant-b5309.firebasestorage.app",
-  messagingSenderId: "353923436254",
-  appId: "1:353923436254:web:c59812099352d6f318bc4f",
-  measurementId: "G-LV457TW0M4",
-};
-
-// Initialize Firebase
-const firebaseapp = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
-
 var createError = require("http-errors");
 var express = require("express");
 var path = require("path");
@@ -63,3 +39,5 @@ app.use(function (err, req, res, next) {
 });
 
 module.exports = app;
+
+export { db }; // Export the db object for use in other modules

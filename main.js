@@ -1,4 +1,16 @@
-// Tab logic
+const firebaseapp = window.firebaseapp;
+const analytics = window.analytics;
+const db = window.db;
+
+// Import Firebase database functions
+import {
+  ref,
+  set,
+  get,
+  push,
+  onValue,
+  off,
+} from "https://www.gstatic.com/firebasejs/10.8.0/firebase-database.js";
 
 document.querySelectorAll(".tab-btn").forEach((btn) => {
   btn.addEventListener("click", function () {
@@ -138,6 +150,7 @@ document
     document.getElementById("grocery-msg").textContent = `Added ${displayName}`;
     this.reset();
     renderInventory();
+    saveInventory(); // Save to Firebase
   });
 
 function renderInventory() {
@@ -172,6 +185,7 @@ function renderInventory() {
         }
 
         renderInventory();
+        saveInventory(); // Save to Firebase
       });
     }
 
@@ -427,8 +441,60 @@ function calculateOpenedExpiration(name) {
     }
   }
 }
+// Database functions
+function saveInventoryToFirebase() {
+  const inventoryRef = ref(db, "inventory");
+  set(inventoryRef, inventory)
+    .then(() => {
+      console.log("Inventory saved to Firebase!");
+    })
+    .catch((error) => {
+      console.error("Error saving inventory:", error);
+    });
+}
+
+function loadInventoryFromFirebase() {
+  const inventoryRef = ref(db, "inventory");
+  get(inventoryRef)
+    .then((snapshot) => {
+      if (snapshot.exists()) {
+        inventory = snapshot.val();
+        console.log("Inventory loaded from Firebase:", inventory);
+        renderInventory();
+      } else {
+        console.log("No inventory data found in Firebase");
+      }
+    })
+    .catch((error) => {
+      console.error("Error loading inventory:", error);
+    });
+}
+
+// Listen for real-time updates
+function setupRealtimeListener() {
+  const inventoryRef = ref(db, "inventory");
+  onValue(inventoryRef, (snapshot) => {
+    if (snapshot.exists()) {
+      inventory = snapshot.val();
+      console.log("Real-time inventory update:", inventory);
+      renderInventory();
+    }
+  });
+}
+
+// Save inventory whenever it changes
+function saveInventory() {
+  saveInventoryToFirebase();
+}
+
 // Initial render
 renderInventory();
+
+// Load existing inventory from Firebase
+loadInventoryFromFirebase();
+
+// Set up real-time listener
+setupRealtimeListener();
 
 /*
 function findFoodEntry(userInput) {
